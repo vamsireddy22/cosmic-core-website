@@ -58,6 +58,9 @@ npx gh-pages -d build
 3. Click Save
 4. Add a CNAME file to your repository with your domain
 
+### Your Live URL
+Your website is available at: **https://vamsi.github.io/cosmic-core-website**
+
 ## Environment Configuration
 
 ### Development

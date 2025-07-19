@@ -218,18 +218,22 @@ src/
 
 ## Deployment
 
-### Netlify
+### GitHub Pages
 
-1. Connect your repository to Netlify
-2. Set build command: `npm run build`
-3. Set publish directory: `build`
-4. Deploy
+This project is configured for GitHub Pages deployment.
 
-### Vercel
+1. **Automatic Deployment**:
+   ```bash
+   ./scripts/deploy.sh
+   ```
 
-1. Connect your repository to Vercel
-2. Vercel will automatically detect React settings
-3. Deploy
+2. **Manual Deployment**:
+   ```bash
+   npm run build
+   npx gh-pages -d build
+   ```
+
+3. **Live URL**: https://vamsi.github.io/cosmic-core-website
 
 ### Other Platforms
 

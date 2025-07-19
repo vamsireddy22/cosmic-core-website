@@ -1,6 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { internships } from '../content/internships';
 
 const Internships: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');

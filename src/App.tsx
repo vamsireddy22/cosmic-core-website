@@ -7,13 +7,15 @@ import About from './pages/About';
 import Courses from './pages/Courses';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
-import Internships from './pages/Internships';
 
 
 
 function App() {
+  // Get the repository name from the URL for GitHub Pages
+  const repoName = process.env.PUBLIC_URL || '';
+  
   return (
-    <Router>
+    <Router basename={repoName}>
       <div className="App">
         <Header />
         <main>

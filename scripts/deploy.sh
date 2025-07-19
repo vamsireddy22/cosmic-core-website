@@ -63,6 +63,11 @@ deploy_github_pages() {
     # Create .nojekyll file for GitHub Pages
     touch build/.nojekyll
     
+    # Copy 404.html to build directory if it doesn't exist
+    if [ ! -f "build/404.html" ]; then
+        cp public/404.html build/404.html
+    fi
+    
     # Deploy using gh-pages package
     if npm list gh-pages >/dev/null 2>&1; then
         npx gh-pages -d build
@@ -73,8 +78,11 @@ deploy_github_pages() {
     fi
     
     print_success "Deployed to GitHub Pages successfully!"
-    print_status "Your site will be available at: https://[username].github.io/[repository-name]"
+    print_status "Your site will be available at: https://vamsi.github.io/cosmic-core-website"
+    print_status "Note: It may take a few minutes for changes to appear"
 }
+
+
 
 # Function to show help
 show_help() {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { aboutContent } from '../content/about';
-import { teamMembers } from '../content/team';
 
 const About: React.FC = () => {
   return (
