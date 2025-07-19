@@ -2,64 +2,154 @@
 
 A modern, responsive website for an edu-tech startup built with React, TypeScript, and Tailwind CSS.
 
-## Features
+![Cosmic Core Website](public/cosmicLogo.jpeg)
 
-- 🎨 Modern, responsive design
-- ⚡ Smooth animations with Framer Motion
-- 📱 Mobile-first approach
-- 🎯 Easy content management
-- 🚀 Fast performance
-- ♿ Accessibility friendly
+## 🌟 Features
 
-## Sections
+- 🎨 **Modern Design** - Clean, professional interface with smooth animations
+- ⚡ **Fast Performance** - Optimized build with code splitting and lazy loading
+- 📱 **Mobile-First** - Fully responsive design that works on all devices
+- 🎯 **Easy Content Management** - Content separated from code for easy updates
+- 🚀 **SEO Optimized** - Meta tags, structured data, and performance optimized
+- ♿ **Accessibility Friendly** - WCAG compliant with proper ARIA labels
+- 🔄 **SPA Routing** - Smooth client-side navigation with React Router
+- 🎭 **Animations** - Beautiful micro-interactions with Framer Motion
 
-- **Home**: Hero section, features, statistics, and call-to-action
-- **About Us**: Company information and team members
-- **Courses**: Educational programs and learning paths
-- **Internships**: Internship opportunities
-- **Project Works**: Student projects showcase
-- **Contact Us**: Contact information and form
+## 📋 Table of Contents
 
-## Getting Started
+- [Features](#-features)
+- [Sections](#sections)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+- [Development](#-development)
+- [Deployment](#-deployment)
+- [Content Management](#-content-management)
+- [Project Structure](#-project-structure)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+## 📄 Sections
+
+- **🏠 Home** - Hero section, features showcase, statistics, and call-to-action
+- **👥 About Us** - Company information, mission, vision, and core values
+- **📚 Courses** - Educational programs and learning paths with detailed information
+- **💼 Internships** - Internship opportunities and application process
+- **🛠️ Project Works** - Student projects showcase with technologies used
+- **📞 Contact Us** - Contact information, form, and social media links
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 19** - Modern UI library with hooks and functional components
+- **TypeScript** - Type safety and better developer experience
+- **React Router v7** - Client-side routing and navigation
+- **Framer Motion** - Smooth animations and micro-interactions
+- **Tailwind CSS** - Utility-first CSS framework for rapid styling
+
+### Build Tools
+- **Create React App** - Zero-configuration build setup
+- **PostCSS** - CSS processing and optimization
+- **Autoprefixer** - Automatic vendor prefixing
+
+### Development
+- **ESLint** - Code linting and quality enforcement
+- **TypeScript Compiler** - Type checking and compilation
+- **GitHub Pages** - Free hosting and deployment
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
+- **Node.js** (v16 or higher)
+- **npm** or **yarn** package manager
+- **Git** for version control
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd cosmic-core-website
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/vamsi/cosmic-core-website.git
+   cd cosmic-core-website
+   ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-3. Start the development server:
+3. **Start the development server**:
+   ```bash
+   npm start
+   ```
+
+4. **Open your browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the website.
+
+## 💻 Development
+
+### Available Scripts
+
 ```bash
+# Start development server
 npm start
-```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### Building for Production
-
-```bash
+# Build for production
 npm run build
+
+# Run tests
+npm test
+
+# Run linting
+npm run lint
+
+# Fix linting issues
+npm run lint:fix
+
+# Type checking
+npm run type-check
+
+# Deploy to GitHub Pages
+npm run deploy
 ```
 
-## Content Management
+### Development Workflow
+
+1. **Make changes** to your code
+2. **Run linting** to check code quality: `npm run lint`
+3. **Test locally** to ensure everything works
+4. **Build** to check for production issues: `npm run build`
+5. **Deploy** when ready: `npm run deploy`
+
+## 🚀 Deployment
+
+### GitHub Pages
+
+This project is configured for GitHub Pages deployment.
+
+1. **Automatic Deployment**:
+   ```bash
+   ./scripts/deploy.sh
+   ```
+
+2. **Manual Deployment**:
+   ```bash
+   npm run build
+   npx gh-pages -d build
+   ```
+
+3. **Live URL**: [https://vamsi.github.io/cosmic-core-website](https://vamsi.github.io/cosmic-core-website)
+
+### Other Platforms
+
+The `npm run build` command creates a `build` folder with static files that can be deployed to any web hosting service.
+
+## 📝 Content Management
 
 The website is designed to be easily maintainable by non-technical people. Content is separated from code and stored in TypeScript files.
 
 ### Adding/Editing Content
 
-#### 1. Courses (`src/content/courses.ts`)
+#### 1. **Courses** (`src/content/courses.ts`)
 
 To add a new course, add an object to the `courses` array:
 
@@ -80,7 +170,7 @@ To add a new course, add an object to the `courses` array:
 }
 ```
 
-#### 2. Internships (`src/content/internships.ts`)
+#### 2. **Internships** (`src/content/internships.ts`)
 
 To add a new internship, add an object to the `internships` array:
 
@@ -105,7 +195,7 @@ To add a new internship, add an object to the `internships` array:
 }
 ```
 
-#### 3. Projects (`src/content/projects.ts`)
+#### 3. **Projects** (`src/content/projects.ts`)
 
 To add a new project, add an object to the `projects` array:
 
@@ -123,7 +213,7 @@ To add a new project, add an object to the `projects` array:
 }
 ```
 
-#### 4. Team Members (`src/content/team.ts`)
+#### 4. **Team Members** (`src/content/team.ts`)
 
 To add a new team member, add an object to the `teamMembers` array:
 
@@ -140,7 +230,7 @@ To add a new team member, add an object to the `teamMembers` array:
 }
 ```
 
-#### 5. Contact Information (`src/content/contact.ts`)
+#### 5. **Contact Information** (`src/content/contact.ts`)
 
 Update contact information in the `contactInfo` object:
 
@@ -160,97 +250,120 @@ Update contact information in the `contactInfo` object:
 
 ### Adding Images
 
-1. Place images in the `public/images/` directory
-2. Organize them by category:
+1. **Place images** in the `public/images/` directory
+2. **Organize them** by category:
    - `public/images/courses/`
    - `public/images/internships/`
    - `public/images/projects/`
    - `public/images/team/`
+3. **Reference images** in content files using the path starting with `/images/`
 
-3. Reference images in content files using the path starting with `/images/`
-
-### Styling
+## 🎨 Styling
 
 The website uses Tailwind CSS for styling. Custom styles are defined in `src/index.css`.
 
-#### Custom Classes
+### Custom Classes
 
-- `.btn-primary`: Primary button style
-- `.btn-secondary`: Secondary button style
-- `.section-padding`: Standard section padding
-- `.container-custom`: Custom container width
+- `.btn-primary` - Primary button style
+- `.btn-secondary` - Secondary button style
+- `.section-padding` - Standard section padding
+- `.container-custom` - Custom container width
+- `.mobile-card` - Mobile-optimized card styles
 
-#### Color Scheme
+### Color Scheme
 
 - **Primary**: Blue shades (`primary-50` to `primary-900`)
 - **Secondary**: Gray shades (`secondary-50` to `secondary-900`)
 
-## Project Structure
+### Responsive Design
+
+The website is built with a mobile-first approach:
+- **Mobile**: Optimized for touch interactions
+- **Tablet**: Enhanced layouts for medium screens
+- **Desktop**: Full-featured experience for large screens
+
+## 📁 Project Structure
 
 ```
-src/
-├── components/          # Reusable components
-│   ├── Header.tsx      # Navigation header
-│   └── Footer.tsx      # Site footer
-├── content/            # Content data files
-│   ├── courses.ts      # Course information
-│   ├── internships.ts  # Internship data
-│   ├── projects.ts     # Project showcase
-│   ├── team.ts         # Team members
-│   └── contact.ts      # Contact information
-├── pages/              # Page components
-│   └── Home.tsx        # Home page
-├── types/              # TypeScript type definitions
-│   └── index.ts        # Content interfaces
-├── App.tsx             # Main app component
-├── index.tsx           # App entry point
-└── index.css           # Global styles
+cosmic-core-website/
+├── public/                 # Static assets
+│   ├── images/            # Image assets
+│   ├── index.html         # Main HTML file
+│   ├── 404.html           # SPA routing support
+│   └── manifest.json      # PWA manifest
+├── src/
+│   ├── components/        # Reusable components
+│   │   ├── Header.tsx     # Navigation header
+│   │   └── Footer.tsx     # Site footer
+│   ├── content/           # Content data files
+│   │   ├── courses.ts     # Course information
+│   │   ├── internships.ts # Internship data
+│   │   ├── projects.ts    # Project showcase
+│   │   ├── team.ts        # Team members
+│   │   └── contact.ts     # Contact information
+│   ├── pages/             # Page components
+│   │   ├── Home.tsx       # Home page
+│   │   ├── About.tsx      # About page
+│   │   ├── Courses.tsx    # Courses page
+│   │   ├── Projects.tsx   # Projects page
+│   │   └── Contact.tsx    # Contact page
+│   ├── types/             # TypeScript type definitions
+│   │   └── index.ts       # Content interfaces
+│   ├── App.tsx            # Main app component
+│   ├── index.tsx          # App entry point
+│   └── index.css          # Global styles
+├── scripts/               # Deployment scripts
+│   ├── deploy.sh          # GitHub Pages deployment
+│   └── verify-build.sh    # Build verification
+├── package.json           # Dependencies and scripts
+├── tailwind.config.js     # Tailwind configuration
+├── tsconfig.json          # TypeScript configuration
+└── README.md              # Project documentation
 ```
 
-## Technologies Used
+## 🤝 Contributing
 
-- **React 18**: UI library
-- **TypeScript**: Type safety
-- **React Router**: Navigation
-- **Framer Motion**: Animations
-- **Tailwind CSS**: Styling
-- **PostCSS**: CSS processing
+We welcome contributions! Here's how you can help:
 
-## Deployment
+### Development Setup
 
-### GitHub Pages
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and test thoroughly
+4. **Run linting**: `npm run lint`
+5. **Build the project**: `npm run build`
+6. **Commit your changes**: `git commit -m 'Add amazing feature'`
+7. **Push to the branch**: `git push origin feature/amazing-feature`
+8. **Open a Pull Request**
 
-This project is configured for GitHub Pages deployment.
+### Code Standards
 
-1. **Automatic Deployment**:
-   ```bash
-   ./scripts/deploy.sh
-   ```
+- Follow TypeScript best practices
+- Use meaningful variable and function names
+- Add comments for complex logic
+- Ensure responsive design works on all devices
+- Test on multiple browsers
 
-2. **Manual Deployment**:
-   ```bash
-   npm run build
-   npx gh-pages -d build
-   ```
+### Content Guidelines
 
-3. **Live URL**: https://vamsi.github.io/cosmic-core-website
+- Keep content clear and concise
+- Use consistent formatting
+- Ensure all links work correctly
+- Optimize images for web use
+- Follow accessibility guidelines
 
-### Other Platforms
+## 📄 License
 
-The `npm run build` command creates a `build` folder with static files that can be deployed to any web hosting service.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contributing
+## 📞 Support
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+If you have any questions or need help:
 
-## Support
+- **Email**: [your-email@example.com]
+- **GitHub Issues**: [Create an issue](https://github.com/vamsi/cosmic-core-website/issues)
+- **Documentation**: Check the [DEPLOYMENT.md](DEPLOYMENT.md) for deployment help
 
-For questions or support, please contact the development team or create an issue in the repository.
+---
 
-## License
-
-This project is licensed under the MIT License.
+**Built with ❤️ by the Cosmic Core Technologies team**
