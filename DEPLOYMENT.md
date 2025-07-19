@@ -61,6 +61,53 @@ npx gh-pages -d build
 ### Your Live URL
 Your website is available at: **https://vamsi.github.io/cosmic-core-website**
 
+## 🔄 Automated Deployment (GitHub Actions)
+
+This project includes automated deployment workflows that run on every push/merge to the main branch.
+
+### Workflows Included
+
+#### 1. **Deploy to GitHub Pages** (`.github/workflows/deploy.yml`)
+- **Triggers**: Push/merge to main branch
+- **Actions**:
+  - Type checking
+  - Linting
+  - Building
+  - Automatic deployment to GitHub Pages
+- **Result**: Website automatically updated
+
+#### 2. **Pull Request Checks** (`.github/workflows/pull-request.yml`)
+- **Triggers**: Pull requests to main branch
+- **Actions**:
+  - Type checking
+  - Linting
+  - Building
+  - PR status comments
+- **Result**: Quality checks before merge
+
+#### 3. **Scheduled Checks** (`.github/workflows/scheduled-checks.yml`)
+- **Triggers**: Every Monday at 9 AM UTC (or manual)
+- **Actions**:
+  - Dependency audit
+  - Security checks
+  - Outdated package detection
+- **Result**: Regular maintenance alerts
+
+### How It Works
+
+1. **Push to main branch** → Automatic deployment
+2. **Create pull request** → Quality checks run
+3. **Merge pull request** → Automatic deployment
+4. **Weekly checks** → Security and dependency monitoring
+
+### Benefits
+
+- ✅ **Zero manual deployment** - Just push to main
+- ✅ **Quality gates** - PRs must pass checks
+- ✅ **Security monitoring** - Regular dependency audits
+- ✅ **Consistent builds** - Same environment every time
+- ✅ **Rollback capability** - Previous versions preserved
+
 ## Environment Configuration
 
 ### Development

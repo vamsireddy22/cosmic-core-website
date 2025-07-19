@@ -39,6 +39,7 @@ npm run deploy
 
 ## 🔄 Deployment Process
 
+### Manual Deployment
 1. Type checking (`npm run type-check`)
 2. Linting (`npm run lint`)
 3. Building (`npm run build`)
@@ -46,9 +47,15 @@ npm run deploy
 5. Copying `404.html` to build
 6. Deploying to `gh-pages` branch
 
+### Automated Deployment (GitHub Actions)
+- **Push to main** → Automatic deployment
+- **Pull requests** → Quality checks
+- **Weekly** → Security audits
+
 ## 📝 Notes
 
 - Repository must be public (or GitHub Pro for private)
 - Changes may take a few minutes to appear
 - All routes work with client-side routing
-- No additional configuration needed 
+- GitHub Actions handle automatic deployment
+- No manual deployment needed for main branch pushes 
