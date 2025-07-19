@@ -99,6 +99,12 @@ npm run build
 # Run tests
 npm test
 
+# Run integration tests
+npm run test:integration
+
+# Run integration tests (CI)
+npm run test:integration:ci
+
 # Run linting
 npm run lint
 
@@ -116,9 +122,32 @@ npm run deploy
 
 1. **Make changes** to your code
 2. **Run linting** to check code quality: `npm run lint`
-3. **Test locally** to ensure everything works
-4. **Build** to check for production issues: `npm run build`
-5. **Deploy** when ready: `npm run deploy`
+3. **Run integration tests** to ensure website functionality: `npm run test:integration`
+4. **Test locally** to ensure everything works
+5. **Build** to check for production issues: `npm run build`
+6. **Deploy** when ready: `npm run deploy`
+
+### Testing
+
+The project includes Playwright integration tests that verify:
+
+- ✅ Server responds with HTML
+- ✅ Page has basic structure
+- ✅ No critical console errors
+
+**Running tests:**
+```bash
+# Run all integration tests
+npm run test:integration
+
+# Run tests with CI-friendly output
+npm run test:integration:ci
+```
+
+**CI/CD Integration:**
+- Tests run automatically on every pull request
+- Tests run before deployment to GitHub Pages
+- Build is blocked if tests fail
 
 ## 🚀 Deployment
 

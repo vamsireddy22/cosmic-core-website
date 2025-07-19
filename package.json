@@ -31,7 +31,9 @@
     "type-check": "tsc --noEmit",
     "prebuild": "npm run type-check",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "test:integration": "playwright test",
+    "test:integration:ci": "playwright test --reporter=line"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@playwright/test": "^1.54.1",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.21",
     "gh-pages": "^6.3.0",

@@ -30,6 +30,9 @@ jobs:
     - name: Build project
       run: npm run build
     
+    - name: Run integration tests
+      run: npm run test:integration:ci
+    
     - name: Comment PR with build status
       uses: actions/github-script@v7
       with:
@@ -47,6 +50,7 @@ jobs:
           - ✅ Type checking passed
           - ✅ Linting passed  
           - ✅ Build completed
+          - ✅ Integration tests passed
           - 📦 Build size: ${buildSizeKB}KB
           
           Ready for review! 🚀`
