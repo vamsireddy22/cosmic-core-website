@@ -25,7 +25,7 @@ export const projects: Project[] = [
   },
   {
     id: 'weather-app',
-    title: 'Weather Dashboard',
+    title: 'Weather App',
     description: 'A weather application that displays current weather and forecasts using external APIs.',
     technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
     duration: '4 weeks',
