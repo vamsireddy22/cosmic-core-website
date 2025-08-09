@@ -6,10 +6,10 @@ import { features } from '../content/features';
 const Home: React.FC = () => {
 
   const stats = [
-    { number: '1000+', label: 'Students Enrolled' },
-    { number: '50+', label: 'Expert Instructors' },
+    { number: '100+', label: 'Students Enrolled' },
+    { number: '10+', label: 'Expert Instructors' },
     { number: '95%', label: 'Job Placement Rate' },
-    { number: '200+', label: 'Projects Completed' }
+    { number: '150+', label: 'Projects Completed' }
   ];
 
   return (
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               Transform Your Future with{' '}
-              <span className="text-primary-600">Tech Education</span>
+              <span className="text-primary-600">CosmicCore</span>
             </motion.h1>
             
             <motion.p
@@ -174,7 +174,7 @@ const Home: React.FC = () => {
               Ready to Start Your Tech Journey?
             </h2>
             <p className="mobile-text-xl text-secondary-300 mb-8 max-w-2xl mx-auto px-4 sm:px-0">
-              Join thousands of students who have transformed their careers with our 
+              Join hundreds of students who have transformed their careers with our 
               comprehensive tech education programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">

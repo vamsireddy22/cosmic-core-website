@@ -1,14 +1,14 @@
 import { ContactInfo } from '../types';
 
 export const contactInfo: ContactInfo = {
-  email: 'hello@edutechstartup.com',
-  phone: '+1 (555) 123-4567',
-  address: '123 Innovation Drive, Tech Valley, CA 94000',
+  email: 'cosmiccoretechnologies@gmail.com',
+  phone: '+91 9901480919',
+  address: 'Bangalore, Karnataka, India',
   socialMedia: {
-    linkedin: 'https://linkedin.com/company/edutechstartup',
-    twitter: 'https://twitter.com/edutechstartup',
-    facebook: 'https://facebook.com/edutechstartup',
-    instagram: 'https://instagram.com/edutechstartup'
+    linkedin: 'https://www.linkedin.com/in/cosmiccore-technologies-0564a1376',
+    twitter: 'https://x.com/cosmiccore4',
+    facebook: 'https://www.facebook.com/share/1JSroE8fv8/',
+    instagram: 'https://www.instagram.com/cosmiccore4/'
   }
 };
 
@@ -42,7 +42,7 @@ export const contactMethods = [
 export const faqs = [
   {
     question: 'What courses do you offer?',
-    answer: 'We offer a wide range of technology courses including Web Development, Data Science, Mobile Development, and Cybersecurity. Each course is designed with industry experts and includes hands-on projects.'
+    answer: 'We offer a wide range of technology courses including Java Full Stack, Data Science & Machine Learning, Python Full Stack, Data Structures & Algorithms, Cybersecurity, UI/UX Design, and VLSI Design. Each course is designed with industry experts and includes hands-on projects.'
   },
   {
     question: 'How long does it take to complete a course?',
@@ -54,7 +54,7 @@ export const faqs = [
   },
   {
     question: 'What is the cost of your courses?',
-    answer: 'Course prices range from $699 to $1299. We also offer payment plans and scholarships for eligible students. Contact us for detailed pricing information.'
+    answer: 'Course prices range from 9999 to 29999. We also offer payment plans and scholarships for eligible students. Contact us for detailed pricing information.'
   },
   {
     question: 'Do you offer online and in-person classes?',

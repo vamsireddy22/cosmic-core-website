@@ -13,8 +13,13 @@ const Footer: React.FC = () => {
       { name: 'Blog', path: '/blog' },
     ],
     courses: [
-      { name: 'Web Development', path: '/courses#web-development' },
-      { name: 'Data Science', path: '/courses#data-science' },
+      { name: 'Java Full Stack', path: '/courses#Java-Full-Stack' },
+      { name: 'Data Structures & Algorithms', path: '/courses#Data-Structures-&-Algorithms' },
+      { name: 'Python Full Stack', path: '/courses#Python-Full-Stack' },
+      { name: 'Data Science & Machine Learning', path: '/courses#Data-Science-&-Machine-Learning' },
+      { name: 'CyberSecurity', path: '/courses#Cyber-Security' },
+      { name: 'UI/UX Design', path: '/courses#UI/UX-Design' },
+      { name: 'VLSI Design', path: '/courses#VLSI-Design' },
     ],
     support: [
       { name: 'Help Center', path: '/help' },

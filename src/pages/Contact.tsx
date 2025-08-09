@@ -25,24 +25,44 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
+    try {
+      const form = e.target as HTMLFormElement;
+      const formDataObj = new FormData(form);
       
-      // Reset success message after 5 seconds
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formDataObj,
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+        form.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      
+      // Reset status after 5 seconds
       setTimeout(() => {
         setSubmitStatus('idle');
       }, 5000);
-    }, 2000);
+    }
   };
 
   return (
@@ -141,7 +161,22 @@ const Contact: React.FC = () => {
                   </motion.div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                {submitStatus === 'error' && (
+                  <motion.div
+                    className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    Sorry, there was an error sending your message. Please try again or contact us directly at {contactInfo.email}.
+                  </motion.div>
+                )}
+
+                <form 
+                  action="https://formspree.io/f/mwpqrbdp" 
+                  method="POST"
+                  onSubmit={handleSubmit} 
+                  className="space-y-6"
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">
@@ -187,30 +222,10 @@ const Contact: React.FC = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="mobile-input"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+91 9901480919"
                       />
                     </div>
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-secondary-700 mb-2">
-                        Subject *
-                      </label>
-                      <select
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="mobile-input"
-                      >
-                        <option value="">Select a subject</option>
-                        <option value="General Inquiry">General Inquiry</option>
-                        <option value="Course Information">Course Information</option>
-                        <option value="Enrollment">Enrollment</option>
-                        <option value="Technical Support">Technical Support</option>
-                        <option value="Partnership">Partnership</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
+
                   </div>
 
                   <div>
@@ -283,7 +298,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-secondary-900">Business Hours</h3>
-                      <p className="text-secondary-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                      <p className="text-secondary-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
                       <p className="text-secondary-600">Saturday: 9:00 AM - 4:00 PM</p>
                       <p className="text-secondary-600">Sunday: Closed</p>
                     </div>
