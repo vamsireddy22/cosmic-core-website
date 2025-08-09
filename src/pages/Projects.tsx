@@ -188,26 +188,6 @@ const Projects: React.FC = () => {
 
                     {/* Action Buttons */}
                     <div className="flex gap-3">
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 mobile-btn bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 text-center"
-                        >
-                          Live Demo
-                        </a>
-                      )}
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 mobile-btn bg-secondary-600 text-white hover:bg-secondary-700 transition-colors duration-200 text-center"
-                        >
-                          View Code
-                        </a>
-                      )}
                     </div>
                   </div>
                 </motion.div>

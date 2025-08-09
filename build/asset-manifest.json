@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cosmic-core-website/static/css/main.2902db50.css",
-    "main.js": "/cosmic-core-website/static/js/main.c1f3f5f9.js",
+    "main.js": "/cosmic-core-website/static/js/main.742675df.js",
     "static/js/453.1775058e.chunk.js": "/cosmic-core-website/static/js/453.1775058e.chunk.js",
     "index.html": "/cosmic-core-website/index.html",
     "main.2902db50.css.map": "/cosmic-core-website/static/css/main.2902db50.css.map",
-    "main.c1f3f5f9.js.map": "/cosmic-core-website/static/js/main.c1f3f5f9.js.map",
+    "main.742675df.js.map": "/cosmic-core-website/static/js/main.742675df.js.map",
     "453.1775058e.chunk.js.map": "/cosmic-core-website/static/js/453.1775058e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2902db50.css",
-    "static/js/main.c1f3f5f9.js"
+    "static/js/main.742675df.js"
   ]
 }
