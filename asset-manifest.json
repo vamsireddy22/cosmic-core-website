@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cosmic-core-website/static/css/main.1275792c.css",
+    "main.js": "/cosmic-core-website/static/js/main.c30193dc.js",
+    "static/js/453.1775058e.chunk.js": "/cosmic-core-website/static/js/453.1775058e.chunk.js",
+    "index.html": "/cosmic-core-website/index.html",
+    "main.1275792c.css.map": "/cosmic-core-website/static/css/main.1275792c.css.map",
+    "main.c30193dc.js.map": "/cosmic-core-website/static/js/main.c30193dc.js.map",
+    "453.1775058e.chunk.js.map": "/cosmic-core-website/static/js/453.1775058e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1275792c.css",
+    "static/js/main.c30193dc.js"
+  ]
+}
