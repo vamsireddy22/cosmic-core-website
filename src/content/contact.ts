@@ -8,7 +8,8 @@ export const contactInfo: ContactInfo = {
     linkedin: 'https://www.linkedin.com/in/cosmiccore-technologies-0564a1376',
     twitter: 'https://x.com/cosmiccore4',
     facebook: 'https://www.facebook.com/share/1JSroE8fv8/',
-    instagram: 'https://www.instagram.com/cosmiccore4/'
+    instagram: 'https://www.instagram.com/cosmiccore4/',
+    whatsapp: 'https://wa.me/919901480919',
   }
 };
 

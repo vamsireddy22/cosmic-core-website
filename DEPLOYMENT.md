@@ -1,6 +1,6 @@
 # Deployment Guide - GitHub Pages
 
-This guide covers GitHub Pages deployment for the Cosmic Core Website.
+This guide covers GitHub Pages deployment for the CosmicCore Website.
 
 ## Quick Start
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Cosmic Core Website Deployment Script - GitHub Pages Only
+# CosmicCore Website Deployment Script - GitHub Pages Only
 # Usage: ./scripts/deploy.sh
 
 set -e
@@ -86,7 +86,7 @@ deploy_github_pages() {
 
 # Function to show help
 show_help() {
-    echo "Cosmic Core Website Deployment Script - GitHub Pages"
+    echo "CosmicCore Website Deployment Script - GitHub Pages"
     echo ""
     echo "Usage: $0 [command]"
     echo ""

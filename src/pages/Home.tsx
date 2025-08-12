@@ -105,7 +105,7 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Why Choose Cosmic Core Technologies?
+              Why Choose CosmicCore Technologies?
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               We provide everything you need to succeed in the tech industry

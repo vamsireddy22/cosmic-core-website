@@ -1,6 +1,6 @@
 # GitHub Actions Setup Guide
 
-This guide explains how to set up and use the automated deployment workflows for the Cosmic Core Website.
+This guide explains how to set up and use the automated deployment workflows for the CosmicCore Website.
 
 ## 🚀 Quick Start
 

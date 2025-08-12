@@ -15,7 +15,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-secondary-900 mb-6">
-              About <span className="text-primary-600">Cosmic Core Technologies</span>
+              About <span className="text-primary-600">CosmicCore Technologies</span>
             </h1>
             <p className="text-xl text-secondary-600 leading-relaxed">
               {aboutContent.companyInfo.description}

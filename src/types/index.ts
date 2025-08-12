@@ -52,5 +52,6 @@ export interface ContactInfo {
     twitter?: string;
     facebook?: string;
     instagram?: string;
+    whatsapp?: string;
   };
 } 

@@ -1,8 +1,8 @@
-# Cosmic Core Website
+# CosmicCore Website
 
 A modern, responsive website for an edu-tech startup built with React, TypeScript, and Tailwind CSS.
 
-![Cosmic Core Website](public/COSMIC-logo.png)
+![CosmicCore Website](public/COSMIC-logo.png)
 
 ## 🌟 Features
 
