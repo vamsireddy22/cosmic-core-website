@@ -33,7 +33,7 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-xl"
+              className="bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 p-8 rounded-xl"
             >
               <h2 className="text-3xl font-bold text-secondary-900 mb-4">Our Mission</h2>
               <p className="text-lg text-secondary-700 leading-relaxed">
@@ -46,7 +46,7 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-secondary-50 to-secondary-100 p-8 rounded-xl"
+              className="bg-gradient-to-br from-brand-teal/10 to-brand-teal/20 p-8 rounded-xl"
             >
               <h2 className="text-3xl font-bold text-secondary-900 mb-4">Our Vision</h2>
               <p className="text-lg text-secondary-700 leading-relaxed">
