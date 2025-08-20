@@ -95,7 +95,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gradient-to-br from-brand-blue/5 via-white to-brand-teal/5">
         <div className="container-custom">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Why Choose CosmicCore Technologies?
+              Why Choose <span className="text-brand-blue">CosmicCore Technologies</span>?
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               We provide everything you need to succeed in the tech industry
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="mobile-card text-center"
+                className="mobile-card text-center bg-gradient-to-br from-brand-blue/10 to-brand-teal/10"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
