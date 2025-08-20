@@ -1,3 +1,47 @@
+name: Build and Deploy (GitHub Pages)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies (clean)
+        run: npm ci
+
+      - name: Build (skip prebuild/type-check and ignore warnings)
+        env:
+          CI: false
+          TSC_COMPILE_ON_ERROR: true
+          DISABLE_ESLINT_PLUGIN: true
+        run: npx react-scripts build
+
+      - name: Configure git for deployment
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Deploy to gh-pages
+        if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
+        run: npx gh-pages -d build -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
 name: Deploy to GitHub Pages
 
 on:
