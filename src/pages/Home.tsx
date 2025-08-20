@@ -15,11 +15,11 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative mobile-hero bg-gradient-to-br from-brand-blue via-white to-brand-teal overflow-hidden">
+      <section className="relative mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-brand-blue rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 180, 360],
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
             }}
           />
           <motion.div
-            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-brand-teal rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             animate={{
               scale: [1.2, 1, 1.2],
               rotate: [360, 180, 0],
@@ -137,7 +137,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-brand-blue">
+      <section className="section-padding bg-primary-600">
         <div className="container-custom">
           <div className="mobile-stats">
             {stats.map((stat, index) => (
@@ -162,7 +162,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-brand-blue to-brand-teal">
+      <section className="section-padding bg-gradient-to-r from-secondary-900 to-secondary-800">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
