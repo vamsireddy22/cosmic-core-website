@@ -34,7 +34,7 @@ const Courses: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <section className="mobile-hero bg-gradient-to-br from-brand-blue via-white to-brand-teal">
         <div className="container-custom">
           <motion.div
             className="text-center max-w-4xl mx-auto"
@@ -43,7 +43,7 @@ const Courses: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Explore Our <span className="text-primary-600">Courses</span>
+              Explore Our <span className="text-brand-blue">Courses</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed mb-8 px-4 sm:px-0">
               Master in-demand skills with our comprehensive, industry-aligned courses designed by experts
@@ -70,7 +70,7 @@ const Courses: React.FC = () => {
                     onClick={() => setSelectedLevel(level)}
                     className={`mobile-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       selectedLevel === level
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-brand-blue text-white'
                         : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
@@ -87,7 +87,7 @@ const Courses: React.FC = () => {
                     onClick={() => setSelectedDuration(duration)}
                     className={`mobile-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       selectedDuration === duration
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-brand-blue text-white'
                         : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
@@ -143,7 +143,7 @@ const Courses: React.FC = () => {
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${getLevelColor(course.level)}`}>
                         {course.level}
                       </span>
-                      <span className="text-xl sm:text-2xl font-bold text-primary-600">
+                      <span className="text-xl sm:text-2xl font-bold text-brand-blue">
                         {course.price}
                       </span>
                     </div>
@@ -172,14 +172,14 @@ const Courses: React.FC = () => {
                       <ul className="space-y-2">
                         {course.features.slice(0, 4).map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center text-sm text-secondary-600">
-                            <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4 text-brand-teal mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             {feature}
                           </li>
                         ))}
                         {course.features.length > 4 && (
-                          <li className="text-sm text-primary-600 font-medium">
+                          <li className="text-sm text-brand-blue font-medium">
                             +{course.features.length - 4} more topics
                           </li>
                         )}
@@ -187,7 +187,7 @@ const Courses: React.FC = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <button className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200">
+                    <button className="mobile-btn w-full bg-brand-blue text-white hover:bg-brand-teal transition-colors duration-200">
                       Enroll Now
                     </button>
                   </div>

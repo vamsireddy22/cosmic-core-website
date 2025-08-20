@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <section className="mobile-hero bg-gradient-to-br from-brand-blue via-white to-brand-teal">
         <div className="container-custom">
           <motion.div
             className="text-center max-w-4xl mx-auto"
@@ -52,7 +52,7 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Student <span className="text-primary-600">Projects</span>
+              Student <span className="text-brand-blue">Projects</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed mb-8 px-4 sm:px-0">
               Explore real-world projects built by our students using modern technologies and best practices
@@ -79,7 +79,7 @@ const Projects: React.FC = () => {
                     onClick={() => setSelectedDifficulty(difficulty)}
                     className={`mobile-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       selectedDifficulty === difficulty
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-brand-blue text-white'
                         : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
@@ -96,7 +96,7 @@ const Projects: React.FC = () => {
                     onClick={() => setSelectedTechnology(tech)}
                     className={`mobile-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       selectedTechnology === tech
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-brand-blue text-white'
                         : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
@@ -178,7 +178,7 @@ const Projects: React.FC = () => {
                         {project.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium"
+                            className="px-3 py-1 bg-brand-blue/10 text-brand-blue rounded-full text-sm font-medium"
                           >
                             {tech}
                           </span>

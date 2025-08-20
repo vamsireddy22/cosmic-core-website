@@ -6,7 +6,7 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-20">
+      <section className="bg-gradient-to-br from-brand-blue via-white to-brand-teal py-20">
         <div className="container-custom">
           <motion.div
             className="text-center max-w-4xl mx-auto"
@@ -15,7 +15,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-secondary-900 mb-6">
-              About <span className="text-primary-600">CosmicCore Technologies</span>
+              About <span className="text-brand-blue">CosmicCore Technologies</span>
             </h1>
             <p className="text-xl text-secondary-600 leading-relaxed">
               {aboutContent.companyInfo.description}

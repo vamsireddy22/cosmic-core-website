@@ -5,7 +5,7 @@ const Careers: React.FC = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding bg-gradient-to-br from-brand-blue via-white to-brand-teal">
         <div className="container-custom text-center">
           <h1 className="mobile-text-4xl font-bold text-secondary-900">Join Our Team</h1>
           <p className="mt-2 text-secondary-600 max-w-2xl mx-auto">
