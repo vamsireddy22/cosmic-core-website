@@ -79,7 +79,7 @@ const About: React.FC = () => {
             {aboutContent.values.map((value, index) => (
               <motion.div
                 key={value.title}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-br from-brand-blue/10 to-brand-teal/10 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
