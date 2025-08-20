@@ -15,11 +15,11 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative mobile-hero bg-gradient-to-br from-[#0b1026] via-[#16103a] to-[#0b1026] overflow-hidden">
+      <section className="relative mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-[#312e81] rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 180, 360],
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
             }}
           />
           <motion.div
-            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-[#5b21b6] rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             animate={{
               scale: [1.2, 1, 1.2],
               rotate: [360, 180, 0],
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
         <div className="container-custom relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <motion.h1
-              className="mobile-text-4xl font-bold text-white mb-6 leading-tight"
+              className="mobile-text-4xl font-bold text-secondary-900 mb-6 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
             </motion.h1>
             
             <motion.p
-              className="mobile-text-xl text-secondary-300 mb-8 leading-relaxed px-4 sm:px-0"
+              className="mobile-text-xl text-secondary-600 mb-8 leading-relaxed px-4 sm:px-0"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
