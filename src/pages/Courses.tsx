@@ -199,7 +199,7 @@ const Courses: React.FC = () => {
       </section>
 
       {/* Course Categories Section */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding bg-gradient-to-br from-brand-blue/10 to-brand-blue/20">
         <div className="container-custom">
           <motion.div
             className="text-center mb-12 sm:mb-16"
