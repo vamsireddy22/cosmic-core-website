@@ -52,7 +52,7 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Transform Your Future with{' '}
+              <span className="text-primary-800">Path To Career</span> with{' '}
               <span className="text-primary-600">CosmicCore</span>
             </motion.h1>
             
