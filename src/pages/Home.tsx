@@ -53,7 +53,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="text-primary-800">Path To Career</span> with{' '}
-              <span className="bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent">CosmicCore</span>
+              <span className="text-[#253684]">CosmicCore</span>
             </motion.h1>
             
             <motion.p
