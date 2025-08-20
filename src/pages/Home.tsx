@@ -105,7 +105,7 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Why Choose <span className="text-brand-blue">CosmicCore Technologies</span>?
+              Why Choose <span className="text-[#253684]">Cosmic</span><span className="text-[#1a8a8e]">Core</span> Technologies?
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               We provide everything you need to succeed in the tech industry
