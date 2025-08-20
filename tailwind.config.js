@@ -29,6 +29,10 @@ module.exports = {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
+        },
+        brand: {
+          blue: '#253684',
+          teal: '#1a8a8e',
         }
       },
       fontFamily: {
