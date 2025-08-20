@@ -2,7 +2,7 @@
 
 A modern, responsive website for an edu-tech startup built with React, TypeScript, and Tailwind CSS.
 
-![CosmicCore Website](public/COSMIC-logo.png)
+![CosmicCore Website](public/COSMI-logo.png)
 
 ## 🌟 Features
 

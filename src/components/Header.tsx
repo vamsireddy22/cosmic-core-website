@@ -71,7 +71,7 @@ const Header: React.FC = () => {
           >
             <Link to="/" className="flex items-center touch-target">
               <img 
-                src='./COSMIC-logo.png' 
+                src="/COSMI-logo.png" 
                 alt="CosmicCore Technologies" 
                 className="w-24 h-16 sm:w-30 sm:h-20 object-contain" 
               />
