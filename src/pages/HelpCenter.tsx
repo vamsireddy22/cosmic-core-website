@@ -327,10 +327,10 @@ const HelpCenter: React.FC = () => {
                 <h3 className="text-xl font-semibold text-secondary-900 mb-2">Email Support</h3>
                 <p className="text-secondary-600 mb-4">Get help via email</p>
                 <a
-                  href="mailto:support@cosmiccore.com"
+                  href="mailto:cosmiccoretechnologies@gmail.com"
                   className="text-primary-600 hover:text-primary-700 font-medium"
                 >
-                  support@cosmiccore.com
+                  cosmiccoretechnologies@gmail.com
                 </a>
               </div>
               
@@ -339,22 +339,22 @@ const HelpCenter: React.FC = () => {
                 <h3 className="text-xl font-semibold text-secondary-900 mb-2">Phone Support</h3>
                 <p className="text-secondary-600 mb-4">Call us directly</p>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+919901480919"
                   className="text-primary-600 hover:text-primary-700 font-medium"
                 >
-                  +1 (555) 123-4567
+                  +91 9901480919
                 </a>
               </div>
               
               <div className="text-center bg-cyan-50 border border-cyan-100 rounded-xl p-6">
                 <div className="text-4xl mb-4">💬</div>
-                <h3 className="text-xl font-semibold text-secondary-900 mb-2">Live Chat</h3>
+                <h3 className="text-xl font-semibold text-secondary-900 mb-2">Chat Support</h3>
                 <p className="text-secondary-600 mb-4">Chat with our team</p>
                 <Link
                   to="/contact"
                   className="text-primary-600 hover:text-primary-700 font-medium"
                 >
-                  Start Chat
+                  Start Chat Support
                 </Link>
               </div>
             </div>

@@ -5,7 +5,7 @@ export const courses: Course[] = [
     id: 'web-development',
     title: 'Java Full Stack',
     description: 'Learn to build modern web applications from frontend to backend using the latest technologies.',
-    duration: '6 months',
+    duration: '3 months',
     level: 'Intermediate',
     price: '16999',
     features: [
@@ -39,7 +39,7 @@ export const courses: Course[] = [
     id: 'artificial-intelligence',
     title: 'Artificial Intelligence',
     description: 'Master advanced AI concepts including neural networks, natural language processing, and computer vision for cutting-edge applications.',
-    duration: '8 months',
+    duration: '6 months',
     level: 'Advanced',
     price: '19999',
     features: [
@@ -56,7 +56,7 @@ export const courses: Course[] = [
     id: 'mobile-development',
     title: 'UI/UX Design',
     description: 'Create cross-platform mobile applications using React Native and modern development practices.',
-    duration: '6 months',
+    duration: '3 months',
     level: 'Intermediate',
     price: '16999',
     features: [
@@ -73,7 +73,7 @@ export const courses: Course[] = [
     id: 'cybersecurity',
     title: 'Cybersecurity',
     description: 'Learn essential cybersecurity concepts, tools, and practices to protect digital assets.',
-    duration: '6 months',
+    duration: '3 months',
     level: 'Intermediate',
     price: '16999',
     features: [
@@ -90,7 +90,7 @@ export const courses: Course[] = [
     id: 'python-full-stack',
     title: 'Python Full Stack',
     description: 'Become a proficient full stack developer using Python for backend and modern frontend technologies.',
-    duration: '6 months',
+    duration: '3 months',
     level: 'Intermediate',
     price: '9999',
     features: [
@@ -107,7 +107,7 @@ export const courses: Course[] = [
     id: 'data-structures-algorithms',
     title: 'Data Structures & Algorithms',
     description: 'Master the fundamentals of data structures and algorithms to excel in technical interviews and real-world problem solving.',
-    duration: '6 months',
+    duration: '3 months',
     level: 'Intermediate',
     price: '16999',
     features: [
