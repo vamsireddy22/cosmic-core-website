@@ -17,15 +17,15 @@ const HelpCenter: React.FC = () => {
     general: [
       {
                  question: "What is CosmicCore Technologies?",
-        answer: "CosmicCore Technologies is an edu-tech startup that offers comprehensive courses in web development, data science, cybersecurity, and other tech fields. We provide hands-on learning experiences and real-world project opportunities."
+        answer: "CosmicCore Technologies is a startup that offers comprehensive courses in web development, data science, cybersecurity, and other tech fields. We provide hands-on learning experiences and real-world project opportunities."
       },
       {
         question: "How can I contact support?",
-        answer: "You can contact our support team through email at support@cosmiccore.com, call us at +1 (555) 123-4567, or use our contact form on the Contact page. We typically respond within 24 hours."
+        answer: "You can contact our support team through email at cosmiccoretechnologies@gmail.com, call us at +91 9901480919, or use our contact form on the Contact page. We typically respond within 24 hours."
       },
       {
         question: "What are your business hours?",
-        answer: "Our support team is available Monday through Friday, 9 AM to 6 PM EST. For urgent technical issues, we offer 24/7 emergency support through our priority support channels."
+        answer: "Our support team is available Monday to Friday, 9 AM to 6 PM IST. For urgent technical issues, we offer 24/7 emergency support through our priority support channels."
       },
       {
         question: 'What courses do you offer?',
@@ -41,11 +41,11 @@ const HelpCenter: React.FC = () => {
       },
       {
         question: 'What is the cost of your courses?',
-        answer: 'Course prices range from 9999 to 29999. We also offer payment plans and scholarships for eligible students. Contact us for detailed pricing information.'
+        answer: 'Course prices range from 9999 to 26999. We also offer payment plans and scholarships for eligible students. Contact us for detailed pricing information.'
       },
       {
         question: 'Do you offer online and in-person classes?',
-        answer: 'Currently, we offer online courses with live instructor sessions. We\'re planning to launch in-person classes in select cities soon.'
+        answer: 'Currently, we offer online courses with live instructor sessions. We are planning to launch in-person classes in select cities soon.'
       },
       {
         question: 'What prerequisites do I need?',
@@ -55,15 +55,11 @@ const HelpCenter: React.FC = () => {
     courses: [
       {
         question: "How long do the courses take to complete?",
-        answer: "Course duration varies by program. Most courses take 3-6 months to complete with 10-15 hours of study per week. You can learn at your own pace and access course materials for up to 12 months."
+        answer: "Course duration varies by program. Most courses take 3-8 months to complete with 10-15 hours of study per week. You can learn at your own pace and access course materials for up to 12 months."
       },
       {
         question: "Do you offer certificates upon completion?",
         answer: "Yes! All our courses provide a certificate of completion. Additionally, many of our programs offer industry-recognized certifications that can help boost your career prospects."
-      },
-      {
-        question: "Can I get a refund if I'm not satisfied?",
-        answer: "We offer a 30-day money-back guarantee for all our courses. If you're not satisfied with your learning experience, you can request a full refund within 30 days of purchase."
       },
       {
         question: "Are there prerequisites for the courses?",
@@ -73,7 +69,7 @@ const HelpCenter: React.FC = () => {
     technical: [
       {
         question: "What if I have technical issues with the platform?",
-        answer: "For technical issues, please check our troubleshooting guide first. If the problem persists, contact our technical support team with details about your device, browser, and the specific error you're encountering."
+        answer: "For technical issues, please check our troubleshooting guide first. If the problem persists, contact our technical support team with details about your device, browser, and the specific error you are encountering."
       },
       {
         question: "Which browsers are supported?",
@@ -91,7 +87,7 @@ const HelpCenter: React.FC = () => {
       },
       {
         question: "Can I transfer my course to someone else?",
-        answer: "Course transfers are allowed within 14 days of purchase. Contact our support team with the transfer request and the new student's information."
+        answer: "Course transfers are allowed within 7 days of purchase. Contact our support team with the transfer request and the new student's information."
       },
       {
         question: "How do I update my profile information?",

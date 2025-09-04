@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { contactInfo, contactMethods } from '../content/contact';
 
 const Contact: React.FC = () => {
+  const location = useLocation();
+  const courseInfo = location.state?.course;
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    subject: '',
-    message: ''
+    message: courseInfo ? `I'm interested in enrolling in the ${courseInfo} course. Please provide more information about enrollment, pricing, and start dates.` : ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,7 +48,6 @@ const Contact: React.FC = () => {
           name: '',
           email: '',
           phone: '',
-          subject: '',
           message: ''
         });
         form.reset();
@@ -179,6 +181,16 @@ const Contact: React.FC = () => {
                   Send us a Message
                 </h2>
                 
+                {courseInfo && (
+                  <motion.div
+                    className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded mb-6"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <strong>Course Enrollment:</strong> You're enrolling in <strong>{courseInfo}</strong>. We'll get back to you with enrollment details!
+                  </motion.div>
+                )}
+                
                 {submitStatus === 'success' && (
                   <motion.div
                     className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6"
@@ -253,7 +265,6 @@ const Contact: React.FC = () => {
                         placeholder="+91 9901480919"
                       />
                     </div>
-
                   </div>
 
                   <div>

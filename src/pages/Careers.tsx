@@ -469,7 +469,7 @@ const Careers: React.FC = () => {
               {
                 step: '04',
                 title: 'Join Our Team',
-                                 description: 'Welcome aboard! Start your journey with <span className="text-blue-900">Cosmic</span><span className="text-cyan-800">Core</span>'
+                                 description: 'Welcome aboard! Start your journey with CosmicCore'
               }
             ].map((step, index) => (
               <motion.div

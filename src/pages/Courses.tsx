@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { courses } from '../content/courses';
 import { features } from '../content/features';
 
@@ -215,9 +216,13 @@ const Courses: React.FC = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <button className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200">
+                    <Link 
+                      to="/contact" 
+                      state={{ course: course.title }}
+                      className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 inline-block text-center"
+                    >
                       Enroll Now
-                    </button>
+                    </Link>
                   </div>
                 </motion.div>
               ))}

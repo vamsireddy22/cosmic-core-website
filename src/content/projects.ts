@@ -13,6 +13,17 @@ export const projects: Project[] = [
     liveUrl: 'https://ecommerce-demo.example.com'
   },
   {
+    id: 'job-portal',
+    title: 'Job Portal Platform',
+    description: 'A comprehensive job portal with job posting, application management, and candidate tracking system.',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'JWT', 'Redux', 'AWS S3'],
+    duration: '10 weeks',
+    difficulty: 'Hard',
+    image: '/images/projects/job-portal.jpg',
+    githubUrl: 'https://github.com/example/job-portal',
+    liveUrl: 'https://job-portal-demo.example.com'
+  },
+  {
     id: 'task-manager',
     title: 'Task Management App',
     description: 'A collaborative task management application with real-time updates and team collaboration features.',
@@ -33,17 +44,6 @@ export const projects: Project[] = [
     image: '/images/projects/weather-app.jpg',
     githubUrl: 'https://github.com/example/weather-app',
     liveUrl: 'https://weather-demo.example.com'
-  },
-  {
-    id: 'blog-platform',
-    title: 'Blog Platform',
-    description: 'A content management system for creating and managing blog posts with rich text editing.',
-    technologies: ['Next.js', 'Prisma', 'PostgreSQL', 'NextAuth'],
-    duration: '7 weeks',
-    difficulty: 'Medium',
-    image: '/images/projects/blog-platform.jpg',
-    githubUrl: 'https://github.com/example/blog-platform',
-    liveUrl: 'https://blog-demo.example.com'
   },
   {
     id: 'chat-application',
