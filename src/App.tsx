@@ -7,6 +7,8 @@ import About from './pages/About';
 import Courses from './pages/Courses';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
+import HelpCenter from './pages/HelpCenter';
+import Careers from './pages/Careers';
 
 
 
@@ -25,6 +27,8 @@ function App() {
             <Route path="/courses" element={<Courses />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/help" element={<HelpCenter />} />
+            <Route path="/careers" element={<Careers />} />
           </Routes>
         </main>
         <Footer />

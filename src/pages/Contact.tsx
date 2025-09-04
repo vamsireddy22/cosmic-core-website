@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { contactInfo, contactMethods, faqs } from '../content/contact';
+import { contactInfo, contactMethods } from '../content/contact';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -68,8 +68,36 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-        <div className="container-custom">
+      <section className="mobile-hero bg-gradient-to-br from-blue-100 via-white to-cyan-100 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </div>
+        
+        <div className="container-custom relative z-10">
           <motion.div
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -77,7 +105,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Get in <span className="text-primary-600">Touch</span>
+              Get in <span className="text-blue-900">Touch</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed px-4 sm:px-0">
               Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
@@ -115,7 +143,7 @@ const Contact: React.FC = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="mobile-card text-center">
+                <div className="mobile-card text-center bg-cyan-50 border border-cyan-100">
                   <div className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-full flex items-center justify-center text-2xl mx-auto mb-4`}>
                     {method.icon}
                   </div>
@@ -318,46 +346,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <motion.div
-            className="text-center mb-12 sm:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
-              Find quick answers to common questions
-            </p>
-          </motion.div>
-
-          <div className="mobile-faq">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                className="mobile-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="mobile-text-xl font-semibold text-secondary-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-secondary-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import logoImage from '../assets/cosmicLogo.jpeg';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,6 +47,8 @@ const Header: React.FC = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Courses', path: '/courses' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'Help Center', path: '/help' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -71,8 +74,8 @@ const Header: React.FC = () => {
           >
             <Link to="/" className="flex items-center touch-target">
               <img 
-                src='./COSMIC-logo.png' 
-                alt="Cosmic Core Technologies" 
+                src={logoImage}
+                alt="CosmicCore Technologies" 
                 className="w-24 h-16 sm:w-30 sm:h-20 object-contain" 
               />
             </Link>
