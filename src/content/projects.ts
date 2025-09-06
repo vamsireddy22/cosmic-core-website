@@ -71,10 +71,10 @@ export const projects: Project[] = [
 
 
 export const projectCategories = [
-  { title: 'Web Applications', icon: '🌐', count: '3 projects', color: 'from-blue-400 to-blue-600' },
-  { title: 'Mobile Apps', icon: '📱', count: '2 projects', color: 'from-green-400 to-green-600' },
-  { title: 'Full-Stack', icon: '⚡', count: '4 projects', color: 'from-purple-400 to-purple-600' },
-  { title: 'UI/UX Design', icon: '🎨', count: '1 project', color: 'from-pink-400 to-pink-600' }
+  { title: 'Web Applications', icon: '🌐', color: 'from-blue-400 to-blue-600' },
+  { title: 'Mobile Apps', icon: '📱', color: 'from-green-400 to-green-600' },
+  { title: 'Full-Stack', icon: '⚡', color: 'from-purple-400 to-purple-600' },
+  { title: 'UI/UX Design', icon: '🎨', color: 'from-pink-400 to-pink-600' }
 ]
 
 

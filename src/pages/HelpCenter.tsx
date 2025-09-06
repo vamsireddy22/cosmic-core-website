@@ -161,7 +161,7 @@ const HelpCenter: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-secondary-900 mb-6">
-              Help <span className="text-blue-900">Center</span>
+              <span className="text-blue-900">Help</span> <span className="text-cyan-800">Center</span>
             </h1>
             <p className="text-xl text-secondary-600 leading-relaxed mb-8">
               Find answers to your questions and get the support you need
@@ -238,7 +238,7 @@ const HelpCenter: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
-              Frequently Asked Questions
+              <span className="text-blue-900">Frequently</span> <span className="text-cyan-800">Asked Questions</span>
             </h2>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
               Find quick answers to the most common questions
@@ -315,7 +315,7 @@ const HelpCenter: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
-              Still Need Help?
+              <span className="text-blue-900">Still Need</span> <span className="text-cyan-800">Help?</span>
             </h2>
             <p className="text-xl text-secondary-600 mb-8">
               Our support team is here to help you with any questions or issues

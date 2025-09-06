@@ -188,6 +188,56 @@ const Careers: React.FC = () => {
         'Collaborate with instructors on curriculum'
       ],
       isActive: true
+    },
+    {
+      id: 9,
+      title: 'Digital Marketing Specialist',
+      category: 'Marketing',
+      location: 'Remote / Bangalore',
+      description: 'Join our marketing team to promote our courses and programs through digital channels. You will develop and execute marketing campaigns, manage social media presence, and drive student acquisition.',
+      requirements: [
+        'Bachelor\'s degree in Marketing or related field',
+        '0-2 years experience in digital marketing',
+        'Proficiency in Google Ads, Facebook Ads, LinkedIn Ads',
+        'Experience with SEO and content marketing',
+        'Strong analytical and reporting skills',
+        'Knowledge of marketing automation tools'
+      ],
+      responsibilities: [
+        'Develop and execute digital marketing campaigns',
+        'Manage social media accounts and content',
+        'Optimize website for SEO and conversion',
+        'Create engaging marketing content',
+        'Analyze campaign performance and ROI',
+        'Collaborate with content and design teams'
+      ],
+      isActive: true
+    },
+    {
+      id: 10,
+      title: 'Human Resources Specialist',
+      category: 'Operations',
+      location: 'Remote / Bangalore',
+      description: 'Join our HR team to support our growing workforce. You will handle recruitment, employee relations, performance management, and help create a positive workplace culture.',
+      requirements: [
+        'Bachelor\'s degree in Human Resources or related field',
+        '0-1 years experience in HR or recruitment',
+        'Knowledge of HR policies and procedures',
+        'Strong communication and interpersonal skills',
+        'Experience with HR software and systems',
+        'Understanding of labor laws and regulations'
+      ],
+      responsibilities: [
+        'Manage recruitment and hiring processes',
+        'Conduct interviews and candidate screening',
+        'Handle employee onboarding and orientation',
+        'Manage employee records and documentation',
+        'Support performance management processes',
+        'Assist with employee relations and conflict resolution',
+        'Coordinate training and development programs',
+        'Ensure compliance with HR policies and laws'
+      ],
+      isActive: true
     }
   ];
 
@@ -235,7 +285,7 @@ const Careers: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-secondary-900 mb-6">
-              Join Our <span className="text-blue-900">Team</span>
+              <span className="text-blue-900">Join Our</span> <span className="text-cyan-800">Team</span>
             </h1>
             <p className="text-xl text-secondary-600 leading-relaxed mb-8">
               Help us shape the future of technology education and inspire the next generation of developers
@@ -402,6 +452,7 @@ const Careers: React.FC = () => {
                                      <div className="flex justify-center items-center">
                      <Link
                        to="/contact"
+                       state={{ job: job.title, activeTab: 'contact-info' }}
                        className="btn-primary"
                      >
                        Apply Now
@@ -442,7 +493,7 @@ const Careers: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
-              How to Apply
+              <span className="text-blue-900">How to</span> <span className="text-cyan-800">Apply</span>
             </h2>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
               Simple steps to join our team
@@ -502,6 +553,7 @@ const Careers: React.FC = () => {
           >
             <Link
               to="/contact"
+              state={{ activeTab: 'contact-info' }}
               className="btn-primary text-lg px-8 py-4"
             >
               Apply Now

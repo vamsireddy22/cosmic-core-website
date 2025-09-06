@@ -80,7 +80,7 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Student <span className="text-blue-900">Projects</span>
+              <span className="text-blue-900">Student</span> <span className="text-cyan-800">Projects</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed mb-8 px-4 sm:px-0">
               Explore real-world projects built by our students using modern technologies and best practices
@@ -236,7 +236,7 @@ const Projects: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Project Categories
+              <span className="text-blue-900">Project</span> <span className="text-cyan-800">Categories</span>
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               Our students build projects across various domains and technologies
@@ -260,9 +260,6 @@ const Projects: React.FC = () => {
                 <h3 className="mobile-text-xl font-semibold text-secondary-900 mb-2">
                   {category.title}
                 </h3>
-                <p className="text-secondary-600">
-                  {category.count}
-                </p>
               </motion.div>
             ))}
           </div>

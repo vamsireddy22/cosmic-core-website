@@ -72,7 +72,7 @@ const Courses: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Explore Our <span className="text-blue-900">Courses</span>
+              <span className="text-blue-900">Explore Our</span> <span className="text-cyan-800">Courses</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed mb-8 px-4 sm:px-0">
               Master in-demand skills with our comprehensive, industry-aligned courses designed by experts
@@ -218,7 +218,7 @@ const Courses: React.FC = () => {
                     {/* CTA Button */}
                     <Link 
                       to="/contact" 
-                      state={{ course: course.title }}
+                      state={{ course: course.title, activeTab: 'contact-info' }}
                       className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 inline-block text-center"
                     >
                       Enroll Now
@@ -242,7 +242,7 @@ const Courses: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Course Categories
+              <span className="text-blue-900">Course</span> <span className="text-cyan-800">Categories</span>
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               Choose from our diverse range of technology courses
@@ -251,10 +251,11 @@ const Courses: React.FC = () => {
 
           <div className="mobile-grid">
             {[
-              { title: 'Web Development', icon: '🌐', count: '3 courses', color: 'from-blue-400 to-blue-600' },
-              { title: 'Data Science', icon: '📊', count: '2 courses', color: 'from-purple-400 to-purple-600' },
-              { title: 'Mobile Development', icon: '📱', count: '2 courses', color: 'from-green-400 to-green-600' },
-              { title: 'Cybersecurity', icon: '🔒', count: '1 course', color: 'from-red-400 to-red-600' }
+              { title: 'Web Development', icon: '🌐', color: 'from-blue-400 to-blue-600' },
+              { title: 'Data Science', icon: '📊', color: 'from-purple-400 to-purple-600' },
+              { title: 'Mobile Development', icon: '📱', color: 'from-green-400 to-green-600' },
+              { title: 'Cybersecurity', icon: '🔒', color: 'from-red-400 to-red-600' },
+              { title: 'VLSI Design', icon: '🔬', color: 'from-orange-400 to-orange-600' }
             ].map((category, index) => (
                              <motion.div
                  key={category.title}
@@ -271,9 +272,6 @@ const Courses: React.FC = () => {
                 <h3 className="mobile-text-xl font-semibold text-secondary-900 mb-2">
                   {category.title}
                 </h3>
-                <p className="text-secondary-600">
-                  {category.count}
-                </p>
               </motion.div>
             ))}
           </div>

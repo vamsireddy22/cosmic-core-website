@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { contactInfo, contactMethods } from '../content/contact';
@@ -6,16 +6,35 @@ import { contactInfo, contactMethods } from '../content/contact';
 const Contact: React.FC = () => {
   const location = useLocation();
   const courseInfo = location.state?.course;
+  const jobInfo = location.state?.job;
+  const activeTab = location.state?.activeTab;
+  const contactInfoRef = useRef<HTMLElement>(null);
   
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    message: courseInfo ? `I'm interested in enrolling in the ${courseInfo} course. Please provide more information about enrollment, pricing, and start dates.` : ''
+    message: courseInfo 
+      ? `I'm interested in enrolling in the ${courseInfo} course. Please provide more information about enrollment, pricing, and start dates.`
+      : jobInfo 
+      ? `I'm interested in applying for the ${jobInfo} position. Please provide more information about the application process and next steps.`
+      : ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Scroll to Contact Information section if coming from course enrollment
+  useEffect(() => {
+    if (activeTab === 'contact-info' && contactInfoRef.current) {
+      setTimeout(() => {
+        contactInfoRef.current?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 500); // Small delay to ensure page is loaded
+    }
+  }, [activeTab]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -107,7 +126,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Get in <span className="text-blue-900">Touch</span>
+              <span className="text-blue-900">Get in</span> <span className="text-cyan-800">Touch</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed px-4 sm:px-0">
               Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
@@ -117,7 +136,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Contact Methods */}
-      <section className="section-padding bg-white">
+      <section ref={contactInfoRef} className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -127,7 +146,7 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Contact Information
+              <span className="text-blue-900">Contact</span> <span className="text-cyan-800">Information</span>
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               Choose your preferred way to reach us
@@ -178,7 +197,7 @@ const Contact: React.FC = () => {
             >
               <div className="mobile-card">
                 <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-6">
-                  Send us a Message
+                  <span className="text-blue-900">Send us a Message</span>
                 </h2>
                 
                 {courseInfo && (
@@ -188,6 +207,16 @@ const Contact: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                   >
                     <strong>Course Enrollment:</strong> You're enrolling in <strong>{courseInfo}</strong>. We'll get back to you with enrollment details!
+                  </motion.div>
+                )}
+                
+                {jobInfo && (
+                  <motion.div
+                    className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <strong>Job Application:</strong> You're applying for <strong>{jobInfo}</strong>. We'll get back to you with application details!
                   </motion.div>
                 )}
                 
@@ -303,7 +332,7 @@ const Contact: React.FC = () => {
             >
               <div className="mobile-card h-full">
                 <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-6">
-                  Visit Our Office
+                  <span className="text-cyan-800">Visit Our Office</span>
                 </h2>
                 
                 {/* Map Placeholder */}
