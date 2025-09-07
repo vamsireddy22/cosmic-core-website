@@ -9,7 +9,7 @@ const Courses: React.FC = () => {
   const [selectedDuration, setSelectedDuration] = useState<string>('All');
 
   const levels = ['All', 'Beginner', 'Intermediate', 'Advanced'];
-  const durations = ['All', '4 months', '5 months', '6 months', '8 months'];
+  const durations = ['All', '3 months', '4 months', '6 months'];
 
   const filteredCourses = useMemo(() => {
     return courses.filter(course => {

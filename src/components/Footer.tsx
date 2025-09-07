@@ -20,6 +20,8 @@ const Footer: React.FC = () => {
       { name: 'CyberSecurity', path: '/courses#Cyber-Security' },
       { name: 'UI/UX Design', path: '/courses#UI/UX-Design' },
       { name: 'VLSI Design', path: '/courses#VLSI-Design' },
+      { name: 'Digital Marketing', path: '/courses#Digital-Marketing' },
+      { name: 'Artificial Intelligence', path: '/courses#Artificial-Intelligence' },
     ],
     support: [
       { name: 'Help Center', path: '/help' },
