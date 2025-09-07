@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { courses } from '../content/courses';
 import { features } from '../content/features';
 
@@ -34,8 +35,36 @@ const Courses: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-        <div className="container-custom">
+      <section className="mobile-hero bg-gradient-to-br from-blue-100 via-white to-cyan-100 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </div>
+        
+        <div className="container-custom relative z-10">
           <motion.div
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -43,7 +72,7 @@ const Courses: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Explore Our <span className="text-primary-600">Courses</span>
+              <span className="text-blue-900">Explore Our</span> <span className="text-cyan-800">Courses</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed mb-8 px-4 sm:px-0">
               Master in-demand skills with our comprehensive, industry-aligned courses designed by experts
@@ -70,7 +99,7 @@ const Courses: React.FC = () => {
                     onClick={() => setSelectedLevel(level)}
                     className={`mobile-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       selectedLevel === level
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
@@ -87,7 +116,7 @@ const Courses: React.FC = () => {
                     onClick={() => setSelectedDuration(duration)}
                     className={`mobile-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       selectedDuration === duration
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-cyan-600 text-white'
                         : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
@@ -123,14 +152,14 @@ const Courses: React.FC = () => {
               {filteredCourses.map((course, index) => (
                 <motion.div
                   key={course.id}
-                  className="mobile-card overflow-hidden"
+                  className="mobile-card overflow-hidden bg-cyan-50 border border-cyan-100"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
                 >
                   {/* Course Image */}
-                  <div className="mobile-image-container flex items-center justify-center">
+                  <div className="mobile-image-container flex items-center justify-center bg-gradient-to-br from-cyan-400 to-cyan-600">
                     <div className="text-white text-4xl sm:text-6xl font-bold">
                       {course.title.split(' ').map(word => word[0]).join('')}
                     </div>
@@ -187,9 +216,13 @@ const Courses: React.FC = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <button className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200">
+                    <Link 
+                      to="/contact" 
+                      state={{ course: course.title, activeTab: 'contact-info' }}
+                      className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 inline-block text-center"
+                    >
                       Enroll Now
-                    </button>
+                    </Link>
                   </div>
                 </motion.div>
               ))}
@@ -199,7 +232,7 @@ const Courses: React.FC = () => {
       </section>
 
       {/* Course Categories Section */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -209,7 +242,7 @@ const Courses: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Course Categories
+              <span className="text-blue-900">Course</span> <span className="text-cyan-800">Categories</span>
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               Choose from our diverse range of technology courses
@@ -218,29 +251,27 @@ const Courses: React.FC = () => {
 
           <div className="mobile-grid">
             {[
-              { title: 'Web Development', icon: '🌐', count: '3 courses', color: 'from-blue-400 to-blue-600' },
-              { title: 'Data Science', icon: '📊', count: '2 courses', color: 'from-purple-400 to-purple-600' },
-              { title: 'Mobile Development', icon: '📱', count: '2 courses', color: 'from-green-400 to-green-600' },
-              { title: 'Cybersecurity', icon: '🔒', count: '1 course', color: 'from-red-400 to-red-600' }
+              { title: 'Web Development', icon: '🌐', color: 'from-blue-400 to-blue-600' },
+              { title: 'Data Science', icon: '📊', color: 'from-purple-400 to-purple-600' },
+              { title: 'Mobile Development', icon: '📱', color: 'from-green-400 to-green-600' },
+              { title: 'Cybersecurity', icon: '🔒', color: 'from-red-400 to-red-600' },
+              { title: 'VLSI Design', icon: '🔬', color: 'from-orange-400 to-orange-600' }
             ].map((category, index) => (
-              <motion.div
-                key={category.title}
-                className="mobile-card text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
+                             <motion.div
+                 key={category.title}
+                 className="mobile-card text-center bg-blue-100 border border-blue-200"
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.8, delay: index * 0.1 }}
+                 viewport={{ once: true }}
+                 whileHover={{ y: -5 }}
+               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center text-2xl mx-auto mb-4`}>
                   {category.icon}
                 </div>
                 <h3 className="mobile-text-xl font-semibold text-secondary-900 mb-2">
                   {category.title}
                 </h3>
-                <p className="text-secondary-600">
-                  {category.count}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -258,7 +289,7 @@ const Courses: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Why Choose EduTech?
+              Why Choose <span className="text-blue-900">Cosmic</span><span className="text-cyan-800">Core</span> Technologies?
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               We provide everything you need to succeed in the tech industry
@@ -269,7 +300,7 @@ const Courses: React.FC = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="mobile-card text-center"
+                className="mobile-card text-center bg-cyan-50 border border-cyan-100"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}

@@ -24,9 +24,9 @@ export interface AboutContent {
 
 export const aboutContent: AboutContent = {
   companyInfo: {
-    name: "Cosmic Core Technologies",
+    name: "CosmicCore Technologies",
     founded: "2025",
-    description: "Cosmic Core Technologies is a leading technology education platform dedicated to empowering individuals with the skills and knowledge needed to thrive in the digital economy. We believe that quality education should be accessible, practical, and career-focused.",
+    description: "CosmicCore Technologies is a leading technology education platform dedicated to empowering individuals with the skills and knowledge needed to thrive in the digital economy. We believe that quality education should be accessible, practical, and career-focused.",
     mission: "To democratize technology education by providing world-class learning experiences that bridge the gap between traditional education and industry demands.",
     vision: "To become the global leader in technology education, creating a world where anyone can learn, grow, and succeed in the tech industry regardless of their background or location."
   },
@@ -66,7 +66,7 @@ export const aboutContent: AboutContent = {
     {
       year: "2018",
       title: "Company Founded",
-      description: "Cosmic Core Technologies was established with a vision to revolutionize technology education."
+      description: "CosmicCore Technologies was established with a vision to revolutionize technology education."
     },
     {
       year: "2019",

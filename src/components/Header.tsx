@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import logoImage from '../assets/cosmicLogo.jpeg';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,8 +48,17 @@ const Header: React.FC = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Courses', path: '/courses' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'Help Center', path: '/help' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
 
   return (
     <motion.header
@@ -71,8 +82,8 @@ const Header: React.FC = () => {
           >
             <Link to="/" className="flex items-center touch-target">
               <img 
-                src='./COSMIC-logo.png' 
-                alt="Cosmic Core Technologies" 
+                src={logoImage}
+                alt="CosmicCore Technologies" 
                 className="w-24 h-16 sm:w-30 sm:h-20 object-contain" 
               />
             </Link>
@@ -89,10 +100,16 @@ const Header: React.FC = () => {
               >
                 <Link
                   to={item.path}
-                  className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-200 relative group touch-target px-2 py-2"
+                  className={`font-medium transition-colors duration-200 relative group touch-target px-2 py-2 ${
+                    isActive(item.path)
+                      ? 'text-primary-600'
+                      : 'text-secondary-700 hover:text-primary-600'
+                  }`}
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary-600 transition-all duration-300 ${
+                    isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}></span>
                 </Link>
               </motion.div>
             ))}
@@ -160,7 +177,11 @@ const Header: React.FC = () => {
                   >
                     <Link
                       to={item.path}
-                      className="block text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-secondary-50 touch-target"
+                      className={`block font-medium transition-colors duration-200 py-3 px-4 rounded-lg touch-target ${
+                        isActive(item.path)
+                          ? 'text-primary-600 bg-primary-50'
+                          : 'text-secondary-700 hover:text-primary-600 hover:bg-secondary-50'
+                      }`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}

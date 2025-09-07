@@ -9,17 +9,17 @@ const Home: React.FC = () => {
     { number: '100+', label: 'Students Enrolled' },
     { number: '10+', label: 'Expert Instructors' },
     { number: '95%', label: 'Job Placement Rate' },
-    { number: '150+', label: 'Projects Completed' }
+    { number: '100+', label: 'Projects Completed' }
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
+      <section className="relative mobile-hero bg-gradient-to-br from-blue-100 via-white to-cyan-100 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 180, 360],
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
             }}
           />
           <motion.div
-            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             animate={{
               scale: [1.2, 1, 1.2],
               rotate: [360, 180, 0],
@@ -52,8 +52,8 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Transform Your Future with{' '}
-              <span className="text-primary-600">CosmicCore</span>
+              <span className="text-blue-800">Path to Career</span> with{' '}
+              <span className="text-blue-900">Cosmic</span><span className="text-cyan-800">Core</span>
             </motion.h1>
             
             <motion.p
@@ -104,9 +104,9 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Why Choose Cosmic Core Technologies?
-            </h2>
+                         <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
+               Why Choose <span className="text-blue-900">Cosmic</span><span className="text-cyan-800">Core</span> Technologies?
+             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               We provide everything you need to succeed in the tech industry
             </p>
@@ -116,14 +116,14 @@ const Home: React.FC = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="mobile-card text-center"
+                className="mobile-card text-center bg-cyan-50 border border-cyan-100"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="text-4xl mb-4 text-cyan-600">{feature.icon}</div>
                 <h3 className="mobile-text-xl font-semibold text-secondary-900 mb-3">
                   {feature.title}
                 </h3>

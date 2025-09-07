@@ -1,18 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { contactInfo, contactMethods, faqs } from '../content/contact';
+import { useLocation } from 'react-router-dom';
+import { contactInfo, contactMethods } from '../content/contact';
 
 const Contact: React.FC = () => {
+  const location = useLocation();
+  const courseInfo = location.state?.course;
+  const jobInfo = location.state?.job;
+  const activeTab = location.state?.activeTab;
+  const contactInfoRef = useRef<HTMLElement>(null);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    subject: '',
-    message: ''
+    message: courseInfo 
+      ? `I'm interested in enrolling in the ${courseInfo} course. Please provide more information about enrollment, pricing, and start dates.`
+      : jobInfo 
+      ? `I'm interested in applying for the ${jobInfo} position. Please provide more information about the application process and next steps.`
+      : ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Scroll to Contact Information section if coming from course enrollment
+  useEffect(() => {
+    if (activeTab === 'contact-info' && contactInfoRef.current) {
+      setTimeout(() => {
+        contactInfoRef.current?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 500); // Small delay to ensure page is loaded
+    }
+  }, [activeTab]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -45,7 +67,6 @@ const Contact: React.FC = () => {
           name: '',
           email: '',
           phone: '',
-          subject: '',
           message: ''
         });
         form.reset();
@@ -68,8 +89,36 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-        <div className="container-custom">
+      <section className="mobile-hero bg-gradient-to-br from-blue-100 via-white to-cyan-100 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </div>
+        
+        <div className="container-custom relative z-10">
           <motion.div
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -77,7 +126,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Get in <span className="text-primary-600">Touch</span>
+              <span className="text-blue-900">Get in</span> <span className="text-cyan-800">Touch</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed px-4 sm:px-0">
               Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
@@ -87,7 +136,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Contact Methods */}
-      <section className="section-padding bg-white">
+      <section ref={contactInfoRef} className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -97,7 +146,7 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Contact Information
+              <span className="text-blue-900">Contact</span> <span className="text-cyan-800">Information</span>
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               Choose your preferred way to reach us
@@ -115,7 +164,7 @@ const Contact: React.FC = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="mobile-card text-center">
+                <div className="mobile-card text-center bg-cyan-50 border border-cyan-100">
                   <div className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-full flex items-center justify-center text-2xl mx-auto mb-4`}>
                     {method.icon}
                   </div>
@@ -148,8 +197,28 @@ const Contact: React.FC = () => {
             >
               <div className="mobile-card">
                 <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-6">
-                  Send us a Message
+                  <span className="text-blue-900">Send us a Message</span>
                 </h2>
+                
+                {courseInfo && (
+                  <motion.div
+                    className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded mb-6"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <strong>Course Enrollment:</strong> You're enrolling in <strong>{courseInfo}</strong>. We'll get back to you with enrollment details!
+                  </motion.div>
+                )}
+                
+                {jobInfo && (
+                  <motion.div
+                    className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <strong>Job Application:</strong> You're applying for <strong>{jobInfo}</strong>. We'll get back to you with application details!
+                  </motion.div>
+                )}
                 
                 {submitStatus === 'success' && (
                   <motion.div
@@ -225,7 +294,6 @@ const Contact: React.FC = () => {
                         placeholder="+91 9901480919"
                       />
                     </div>
-
                   </div>
 
                   <div>
@@ -264,7 +332,7 @@ const Contact: React.FC = () => {
             >
               <div className="mobile-card h-full">
                 <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-6">
-                  Visit Our Office
+                  <span className="text-cyan-800">Visit Our Office</span>
                 </h2>
                 
                 {/* Map Placeholder */}
@@ -318,46 +386,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <motion.div
-            className="text-center mb-12 sm:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
-              Find quick answers to common questions
-            </p>
-          </motion.div>
-
-          <div className="mobile-faq">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                className="mobile-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="mobile-text-xl font-semibold text-secondary-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-secondary-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

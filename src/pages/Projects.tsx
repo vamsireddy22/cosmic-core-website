@@ -43,8 +43,36 @@ const Projects: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="mobile-hero bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-        <div className="container-custom">
+      <section className="mobile-hero bg-gradient-to-br from-blue-100 via-white to-cyan-100 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </div>
+        
+        <div className="container-custom relative z-10">
           <motion.div
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -52,7 +80,7 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mobile-text-4xl font-bold text-secondary-900 mb-6">
-              Student <span className="text-primary-600">Projects</span>
+              <span className="text-blue-900">Student</span> <span className="text-cyan-800">Projects</span>
             </h1>
             <p className="mobile-text-xl text-secondary-600 leading-relaxed mb-8 px-4 sm:px-0">
               Explore real-world projects built by our students using modern technologies and best practices
@@ -132,14 +160,14 @@ const Projects: React.FC = () => {
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  className="mobile-card overflow-hidden"
+                  className="mobile-card overflow-hidden bg-blue-50 border border-blue-100"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
                 >
                   {/* Project Image */}
-                  <div className="mobile-image-container flex items-center justify-center relative">
+                  <div className="mobile-image-container flex items-center justify-center relative bg-gradient-to-br from-blue-400 to-blue-600">
                     <div className="text-white text-4xl sm:text-6xl font-bold">
                       {project.title.split(' ').map(word => word[0]).join('')}
                     </div>
@@ -198,7 +226,7 @@ const Projects: React.FC = () => {
       </section>
 
       {/* Project Categories Section */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding bg-blue-50">
         <div className="container-custom">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -208,7 +236,7 @@ const Projects: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
-              Project Categories
+              <span className="text-blue-900">Project</span> <span className="text-cyan-800">Categories</span>
             </h2>
             <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
               Our students build projects across various domains and technologies
@@ -219,7 +247,7 @@ const Projects: React.FC = () => {
             {projectCategories.map((category, index) => (
               <motion.div
                 key={category.title}
-                className="mobile-card text-center"
+                className="mobile-card text-center bg-blue-100 border border-blue-200"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -232,9 +260,6 @@ const Projects: React.FC = () => {
                 <h3 className="mobile-text-xl font-semibold text-secondary-900 mb-2">
                   {category.title}
                 </h3>
-                <p className="text-secondary-600">
-                  {category.count}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -263,7 +288,7 @@ const Projects: React.FC = () => {
             {projectFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="text-center p-6 rounded-xl bg-gradient-to-br from-white to-secondary-50 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-cyan-100 shadow-lg hover:shadow-xl transition-all duration-300 border border-cyan-200"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
