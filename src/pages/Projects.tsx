@@ -6,7 +6,7 @@ const Projects: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('All');
   const [selectedTechnology, setSelectedTechnology] = useState<string>('All');
-
+  
   const difficulties = ['All', 'Easy', 'Medium', 'Hard'];
   const technologies = ['All', 'React', 'Node.js', 'TypeScript', 'MongoDB'];
 
