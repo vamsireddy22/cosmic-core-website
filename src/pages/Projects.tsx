@@ -8,7 +8,7 @@ const Projects: React.FC = () => {
   const [selectedTechnology, setSelectedTechnology] = useState<string>('All');
 
   const difficulties = ['All', 'Easy', 'Medium', 'Hard'];
-  const technologies = ['All', 'React', 'Node.js', 'TypeScript', 'Next.js', 'Java'];
+  const technologies = ['All', 'React', 'Node.js', 'TypeScript', 'MongoDB'];
 
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
