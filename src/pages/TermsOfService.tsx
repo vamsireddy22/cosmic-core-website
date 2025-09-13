@@ -197,7 +197,7 @@ const TermsOfService: React.FC = () => {
 
               {/* Changes to Terms */}
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">13. Changes to Terms</h2>
+                <h2 className="text-2xl font-bold text-secondary-900 mb-4">12. Changes to Terms</h2>
                 <p className="text-secondary-700 mb-4">
                   We reserve the right to modify these Terms at any time. We will notify users of significant changes by:
                 </p>
@@ -213,27 +213,19 @@ const TermsOfService: React.FC = () => {
 
               {/* Contact Information */}
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">14. Contact Information</h2>
+                <h2 className="text-2xl font-bold text-secondary-900 mb-4">13. Contact Information</h2>
                 <p className="text-secondary-700 mb-4">
                   If you have any questions about these Terms, please contact us at:
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-secondary-700">
-                    <strong>Email:</strong> legal@cosmiccore.tech<br />
-                    <strong>Address:</strong> CosmicCore Technologies<br />
-                    [Your Business Address]<br />
-                    <strong>Phone:</strong> [Your Contact Number]
+                    <strong>Email:</strong> cosmiccoretechnologies@gmail.com<br />
+                    <strong>Address:</strong> Bangalore, Karnataka, India<br />
+                    <strong>Phone:</strong> +91 9901480919
                   </p>
                 </div>
               </section>
 
-              {/* Severability */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">15. Severability</h2>
-                <p className="text-secondary-700">
-                  If any provision of these Terms is found to be unenforceable or invalid, the remaining provisions will remain in full force and effect.
-                </p>
-              </section>
 
 
             </div>
