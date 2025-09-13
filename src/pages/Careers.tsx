@@ -191,25 +191,28 @@ const Careers: React.FC = () => {
     },
     {
       id: 9,
-      title: 'Digital Marketing Specialist',
+      title: 'Digital Marketing (Tutor)',
       category: 'Marketing',
       location: 'Remote / Bangalore',
-      description: 'Join our marketing team to promote our courses and programs through digital channels. You will develop and execute marketing campaigns, manage social media presence, and drive student acquisition.',
+      description: 'Join our teaching team as a Digital Marketing instructor. You will develop and deliver comprehensive digital marketing curriculum covering modern strategies, tools, and techniques to prepare students for successful marketing careers.',
       requirements: [
-        'Bachelor\'s degree in Marketing or related field',
-        '0-2 years experience in digital marketing',
-        'Proficiency in Google Ads, Facebook Ads, LinkedIn Ads',
-        'Experience with SEO and content marketing',
-        'Strong analytical and reporting skills',
-        'Knowledge of marketing automation tools'
+        'Bachelor\'s degree in Marketing, Business, or related field',
+        'Proficiency in Google Ads, Facebook Ads, LinkedIn Ads, TikTok Ads',
+        'Experience with SEO, SEM, and content marketing strategies',
+        'Strong analytical and data-driven marketing skills',
+        'Knowledge of marketing automation tools (HubSpot, Mailchimp, etc.)',
+        'Teaching or training experience preferred',
+        'Certification in digital marketing (Google Ads, Facebook Blueprint) preferred'
       ],
       responsibilities: [
-        'Develop and execute digital marketing campaigns',
-        'Manage social media accounts and content',
-        'Optimize website for SEO and conversion',
-        'Create engaging marketing content',
-        'Analyze campaign performance and ROI',
-        'Collaborate with content and design teams'
+        'Develop comprehensive digital marketing curriculum',
+        'Teach modern digital marketing strategies and tools',
+        'Guide students in building successful marketing campaigns',
+        'Create hands-on projects and real-world case studies',
+        'Mentor students in digital marketing career development',
+        'Stay updated with latest digital marketing trends and platforms',
+        'Collaborate with industry partners for practical insights',
+        'Assess student progress and provide career guidance'
       ],
       isActive: true
     },
@@ -221,7 +224,6 @@ const Careers: React.FC = () => {
       description: 'Join our HR team to support our growing workforce. You will handle recruitment, employee relations, performance management, and help create a positive workplace culture.',
       requirements: [
         'Bachelor\'s degree in Human Resources or related field',
-        '0-1 years experience in HR or recruitment',
         'Knowledge of HR policies and procedures',
         'Strong communication and interpersonal skills',
         'Experience with HR software and systems',
@@ -236,6 +238,168 @@ const Careers: React.FC = () => {
         'Assist with employee relations and conflict resolution',
         'Coordinate training and development programs',
         'Ensure compliance with HR policies and laws'
+      ],
+      isActive: true
+    },
+    {
+      id: 11,
+      title: 'Human Resources Management (Tutor)',
+      category: 'Teaching',
+      location: 'Remote / Bangalore',
+      description: 'Join our teaching team as an HR Management instructor. You will develop and deliver comprehensive HR training programs covering recruitment, employee relations, performance management, and organizational development.',
+      requirements: [
+        'Bachelor\'s degree in Human Resources, Business Administration, or related field',
+        'Teaching or training experience preferred',
+        'Strong knowledge of HR policies, procedures, and best practices',
+        'Experience with HR analytics and technology',
+        'Excellent communication and presentation skills',
+        'Certification in HR (PHR, SPHR, SHRM-CP) preferred'
+      ],
+      responsibilities: [
+        'Develop comprehensive HR management curriculum',
+        'Deliver engaging lectures and workshops',
+        'Create hands-on projects and case studies',
+        'Mentor students in HR career development',
+        'Stay updated with latest HR trends and practices',
+        'Collaborate with industry partners for real-world insights',
+        'Assess student progress and provide feedback'
+      ],
+      isActive: true
+    },
+    {
+      id: 12,
+      title: 'Finance Management (Tutor)',
+      category: 'Teaching',
+      location: 'Remote / Bangalore',
+      description: 'Lead our Finance Management program. You will teach students financial analysis, risk management, and corporate finance to prepare them for successful finance careers.',
+      requirements: [
+        'Bachelor\'s degree in Finance, Economics, or MBA with Finance specialization',
+        'Teaching or training experience preferred',
+        'Strong knowledge of financial markets and instruments',
+        'Experience with financial modeling and analysis',
+        'CFA, FRM, or similar professional certification preferred',
+        'Excellent analytical and communication skills'
+      ],
+      responsibilities: [
+        'Develop comprehensive finance curriculum',
+        'Teach financial analysis and modeling techniques',
+        'Guide students in financial strategy development',
+        'Create real-world finance projects and simulations',
+        'Mentor students for finance career opportunities',
+        'Stay current with financial market trends',
+        'Build industry connections for student placements'
+      ],
+      isActive: true
+    },
+    {
+      id: 13,
+      title: 'Business Development & Sales (Tutor)',
+      category: 'Teaching',
+      location: 'Remote / Bangalore',
+      description: 'Join our teaching team as a Business Development & Sales instructor. You will develop and deliver comprehensive sales and business development curriculum covering modern strategies, techniques, and tools to prepare students for successful sales careers.',
+      requirements: [
+        'Bachelor\'s degree in Business, Marketing, or related field',
+        '3+ years experience in sales and business development',
+        'Proven track record in sales performance and client acquisition',
+        'Experience with CRM systems and sales tools',
+        'Strong communication and presentation skills',
+        'Knowledge of sales methodologies and techniques',
+        'Teaching or training experience preferred',
+        'Sales certifications (CSP, CSM) preferred'
+      ],
+      responsibilities: [
+        'Develop comprehensive sales and business development curriculum',
+        'Teach modern sales strategies and techniques',
+        'Guide students in client acquisition and relationship building',
+        'Create hands-on projects and real-world sales scenarios',
+        'Mentor students in sales career development',
+        'Stay updated with latest sales trends and technologies',
+        'Collaborate with industry partners for practical insights',
+        'Assess student progress and provide career guidance'
+      ],
+      isActive: true
+    },
+    {
+      id: 14,
+      title: 'Internet of Things(IoT) (Tutor)',
+      category: 'Teaching',
+      location: 'Remote / Bangalore',
+      description: 'Join our teaching team as an Internet of Things(IoT) instructor. You will develop and deliver comprehensive IoT curriculum covering sensor integration, connectivity protocols, cloud platforms, and smart device development to prepare students for successful IoT careers.',
+      requirements: [
+        'Bachelor\'s degree in Computer Science, Electronics, or related field',
+        '3+ years experience in IoT development and embedded systems',
+        'Proficiency in Arduino, ESP32, Raspberry Pi programming',
+        'Experience with IoT protocols (MQTT, CoAP, HTTP)',
+        'Knowledge of cloud platforms (AWS IoT, Azure IoT, Google Cloud IoT)',
+        'Experience with wireless communication (WiFi, Bluetooth, LoRa)',
+        'Teaching or training experience preferred',
+        'IoT certifications preferred'
+      ],
+      responsibilities: [
+        'Develop comprehensive IoT development curriculum',
+        'Teach IoT architecture and protocol implementation',
+        'Guide students in sensor integration and data collection',
+        'Create hands-on IoT projects and prototypes',
+        'Mentor students in IoT career development',
+        'Stay updated with latest IoT technologies and trends',
+        'Collaborate with industry partners for practical insights',
+        'Assess student progress and provide career guidance'
+      ],
+      isActive: true
+    },
+    {
+      id: 15,
+      title: 'Embedded Systems (Tutor)',
+      category: 'Teaching',
+      location: 'Remote / Bangalore',
+      description: 'Join our teaching team as an Embedded Systems instructor. You will develop and deliver comprehensive embedded systems curriculum covering microcontroller programming, real-time systems, hardware-software integration, and system optimization.',
+      requirements: [
+        'Bachelor\'s degree in Electronics, Computer Science, or related field',
+        '4+ years experience in embedded systems development',
+        'Proficiency in C/C++ programming for embedded systems',
+        'Experience with microcontrollers (ARM, AVR, PIC)',
+        'Knowledge of real-time operating systems (FreeRTOS, RTX)',
+        'Experience with hardware-software integration',
+        'Teaching or training experience preferred',
+        'Embedded systems certifications preferred'
+      ],
+      responsibilities: [
+        'Develop comprehensive embedded systems curriculum',
+        'Teach microcontroller programming and architecture',
+        'Guide students in real-time system design',
+        'Create hands-on embedded projects and prototypes',
+        'Mentor students in embedded systems career development',
+        'Stay updated with latest embedded technologies',
+        'Collaborate with industry partners for practical insights',
+        'Assess student progress and provide career guidance'
+      ],
+      isActive: true
+    },
+    {
+      id: 16,
+      title: 'Data Analyst (Tutor)',
+      category: 'Teaching',
+      location: 'Remote / Bangalore',
+      description: 'Join our teaching team as a Data Analyst instructor. You will develop and deliver comprehensive data analysis curriculum covering statistical analysis, data visualization, SQL, Excel, and business intelligence tools to prepare students for successful data analyst careers.',
+      requirements: [
+        'Bachelor\'s degree in Statistics, Mathematics, Computer Science, or related field',
+        '3+ years experience in data analysis and business intelligence',
+        'Proficiency in SQL, Excel, and data visualization tools',
+        'Experience with Python for data analysis (pandas, numpy)',
+        'Knowledge of statistical analysis and data modeling',
+        'Experience with BI tools (Tableau, Power BI, QlikView)',
+        'Teaching or training experience preferred',
+        'Data analysis certifications preferred'
+      ],
+      responsibilities: [
+        'Develop comprehensive data analysis curriculum',
+        'Teach statistical analysis and data visualization techniques',
+        'Guide students in SQL and database management',
+        'Create hands-on data analysis projects and case studies',
+        'Mentor students in data analyst career development',
+        'Stay updated with latest data analysis tools and trends',
+        'Collaborate with industry partners for real-world data insights',
+        'Assess student progress and provide career guidance'
       ],
       isActive: true
     }
@@ -403,7 +567,7 @@ const Careers: React.FC = () => {
           </div>
 
           {/* Job Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {filteredJobs.map((job, index) => (
               <motion.div
                 key={job.id}
@@ -414,13 +578,13 @@ const Careers: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
+                <div className="p-4">
+                  <div className="flex items-start justify-between mb-3">
                                          <div>
-                       <h3 className="text-xl font-semibold text-secondary-900 mb-2">
+                       <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                          {job.title}
                        </h3>
-                       <div className="flex flex-wrap gap-2 mb-3">
+                       <div className="flex flex-wrap gap-2 mb-2">
                          <span className="px-3 py-1 bg-secondary-100 text-secondary-700 text-sm rounded-full">
                            {job.location}
                          </span>
@@ -428,12 +592,12 @@ const Careers: React.FC = () => {
                      </div>
                   </div>
 
-                  <p className="text-secondary-600 mb-4 leading-relaxed">
+                  <p className="text-secondary-600 mb-3 leading-relaxed text-sm">
                     {job.description}
                   </p>
 
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-secondary-900 mb-2">Requirements:</h4>
+                  <div className="mb-3">
+                    <h4 className="font-semibold text-secondary-900 mb-1 text-sm">Requirements:</h4>
                     <ul className="text-sm text-secondary-600 space-y-1">
                       {job.requirements.slice(0, 3).map((req, idx) => (
                         <li key={idx} className="flex items-start">
@@ -449,7 +613,7 @@ const Careers: React.FC = () => {
                     </ul>
                   </div>
 
-                                     <div className="flex justify-center items-center">
+                                     <div className="flex justify-center items-center mt-3">
                      <Link
                        to="/contact"
                        state={{ job: job.title, activeTab: 'contact-info' }}

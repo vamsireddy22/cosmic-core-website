@@ -44,7 +44,7 @@ export const contactMethods = [
 export const faqs = [
   {
     question: 'What courses do you offer?',
-    answer: 'We offer a wide range of technology courses including Java Full Stack, Data Science & Machine Learning, Python Full Stack, Data Structures & Algorithms, Cybersecurity, UI/UX Design, and VLSI Design. Each course is designed with industry experts and includes hands-on projects.'
+    answer: 'We offer a wide range of technology and business courses including Java Full Stack, Data Science & Machine Learning, Python Full Stack, Data Structures & Algorithms, Cybersecurity, UI/UX Design, VLSI Design, Human Resources Management, Finance Management, Business Development & Sales, Internet of Things(IoT), Embedded Systems, and Data Analyst. Each course is designed with industry experts and includes hands-on projects.'
   },
   {
     question: 'How long does it take to complete a course?',

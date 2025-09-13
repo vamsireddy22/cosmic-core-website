@@ -8,9 +8,22 @@ const Courses: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedLevel, setSelectedLevel] = useState<string>('All');
   const [selectedDuration, setSelectedDuration] = useState<string>('All');
+  const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
 
   const levels = ['All', 'Beginner', 'Intermediate', 'Advanced'];
   const durations = ['All', '3 months', '4 months', '6 months'];
+
+  const toggleCourseExpansion = (courseId: string) => {
+    setExpandedCourses(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(courseId)) {
+        newSet.delete(courseId);
+      } else {
+        newSet.add(courseId);
+      }
+      return newSet;
+    });
+  };
 
   const filteredCourses = useMemo(() => {
     return courses.filter(course => {
@@ -199,7 +212,7 @@ const Courses: React.FC = () => {
                     <div className="mb-6">
                       <h4 className="font-semibold text-secondary-900 mb-3">What you'll learn:</h4>
                       <ul className="space-y-2">
-                        {course.features.slice(0, 4).map((feature, featureIndex) => (
+                        {(expandedCourses.has(course.id) ? course.features : course.features.slice(0, 4)).map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center text-sm text-secondary-600">
                             <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -208,8 +221,16 @@ const Courses: React.FC = () => {
                           </li>
                         ))}
                         {course.features.length > 4 && (
-                          <li className="text-sm text-primary-600 font-medium">
-                            +{course.features.length - 4} more topics
+                          <li>
+                            <button
+                              onClick={() => toggleCourseExpansion(course.id)}
+                              className="text-sm text-primary-600 font-medium hover:text-primary-700 transition-colors duration-200"
+                            >
+                              {expandedCourses.has(course.id) 
+                                ? 'Show less' 
+                                : `+${course.features.length - 4} more topics`
+                              }
+                            </button>
                           </li>
                         )}
                       </ul>
@@ -252,10 +273,13 @@ const Courses: React.FC = () => {
           <div className="mobile-grid">
             {[
               { title: 'Web Development', icon: '🌐', color: 'from-blue-400 to-blue-600' },
-              { title: 'Data Science', icon: '📊', color: 'from-purple-400 to-purple-600' },
+              { title: 'Data Science & Machine Learning', icon: '📊', color: 'from-purple-400 to-purple-600' },
+              { title: 'Artificial Intelligence & ML', icon: '🤖', color: 'from-indigo-400 to-indigo-600' },
               { title: 'Mobile Development', icon: '📱', color: 'from-green-400 to-green-600' },
               { title: 'Cybersecurity', icon: '🔒', color: 'from-red-400 to-red-600' },
-              { title: 'VLSI Design', icon: '🔬', color: 'from-orange-400 to-orange-600' }
+              { title: 'VLSI Design', icon: '🔬', color: 'from-orange-400 to-orange-600' },
+              { title: 'Business & Management', icon: '💼', color: 'from-emerald-400 to-emerald-600' },
+              { title: 'IoT & Embedded', icon: '🔧', color: 'from-teal-400 to-teal-600' }
             ].map((category, index) => (
                              <motion.div
                  key={category.title}

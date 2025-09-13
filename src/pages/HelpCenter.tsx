@@ -29,7 +29,7 @@ const HelpCenter: React.FC = () => {
       },
       {
         question: 'What courses do you offer?',
-        answer: 'We offer a wide range of technology courses including Java Full Stack, Data Science & Machine Learning, Python Full Stack, Data Structures & Algorithms, Cybersecurity, UI/UX Design, and VLSI Design. Each course is designed with industry experts and includes hands-on projects.'
+        answer: 'We offer a wide range of technology and business courses including Java Full Stack, Data Science & Machine Learning, Python Full Stack, Data Structures & Algorithms, Cybersecurity, UI/UX Design, VLSI Design, Human Resources Management, Finance Management, Business Development & Sales, Internet of Things(IoT), Embedded Systems, and Data Analyst. Each course is designed with industry experts and includes hands-on projects.'
       },
       {
         question: 'How long does it take to complete a course?',
@@ -87,7 +87,7 @@ const HelpCenter: React.FC = () => {
       },
       {
         question: "Can I transfer my course to someone else?",
-        answer: "Course transfers are allowed within 7 days of purchase. Contact our support team with the transfer request and the new student's information."
+        answer: "Course transfers are not available. However, you can shift to another course that better suits your needs. Contact our support team to discuss course switching options and any applicable policies."
       },
       {
         question: "How do I update my profile information?",
