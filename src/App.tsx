@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import HelpCenter from './pages/HelpCenter';
 import Careers from './pages/Careers';
+import TermsOfService from './pages/TermsOfService';
 
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/help" element={<HelpCenter />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/terms" element={<TermsOfService />} />
           </Routes>
         </main>
         <Footer />
