@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 const HelpCenter: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('general');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
 
   const categories = [
     { id: 'general', name: 'General', icon: '📋' },
@@ -121,6 +124,34 @@ const HelpCenter: React.FC = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const handleSearch = () => {
+    if (!searchTerm.trim()) {
+      setIsSearching(false);
+      setSearchResults([]);
+      return;
+    }
+
+    setIsSearching(true);
+    const allFaqs = Object.values(faqs).flat();
+    const filtered = allFaqs.filter(faq => 
+      faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setSearchResults(filtered);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchTerm('');
+    setIsSearching(false);
+    setSearchResults([]);
+  };
+
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -173,12 +204,28 @@ const HelpCenter: React.FC = () => {
                 <input
                   type="text"
                   placeholder="Search for help articles..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyPress={handleKeyPress}
                   className="w-full px-6 py-4 text-lg border border-secondary-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
-                <button className="absolute right-2 top-2 bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors duration-200">
+                <button 
+                  onClick={handleSearch}
+                  className="absolute right-2 top-2 bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors duration-200"
+                >
                   Search
                 </button>
               </div>
+              {isSearching && (
+                <div className="mt-4 text-center">
+                  <button
+                    onClick={clearSearch}
+                    className="text-primary-600 hover:text-primary-700 font-medium"
+                  >
+                    Clear search results
+                  </button>
+                </div>
+              )}
             </div>
           </motion.div>
         </div>
@@ -265,7 +312,66 @@ const HelpCenter: React.FC = () => {
 
           {/* FAQ Items */}
           <div className="max-w-4xl mx-auto">
-            {faqs[activeCategory as keyof typeof faqs].map((faq, index) => (
+            {isSearching ? (
+              <>
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+                    Search Results for "{searchTerm}"
+                  </h3>
+                  <p className="text-secondary-600">
+                    Found {searchResults.length} result{searchResults.length !== 1 ? 's' : ''}
+                  </p>
+                </div>
+                {searchResults.length > 0 ? (
+                  searchResults.map((faq, index) => (
+                    <motion.div
+                      key={index}
+                      className="bg-blue-50 border border-blue-100 rounded-xl shadow-md mb-4 overflow-hidden"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <button
+                        className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-blue-100 transition-colors duration-200"
+                        onClick={() => toggleFaq(index)}
+                      >
+                        <h3 className="text-lg font-semibold text-secondary-900">
+                          {faq.question}
+                        </h3>
+                        <span className="text-primary-600 text-xl">
+                          {openFaq === index ? '−' : '+'}
+                        </span>
+                      </button>
+                      {openFaq === index && (
+                        <motion.div
+                          className="px-6 pb-4"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <p className="text-secondary-600 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </motion.div>
+                      )}
+                    </motion.div>
+                  ))
+                ) : (
+                  <div className="text-center py-12">
+                    <div className="text-6xl mb-4">🔍</div>
+                    <h3 className="text-2xl font-semibold text-secondary-900 mb-2">
+                      No results found
+                    </h3>
+                    <p className="text-secondary-600">
+                      Try searching with different keywords or browse our FAQ categories
+                    </p>
+                  </div>
+                )}
+              </>
+            ) : (
+              faqs[activeCategory as keyof typeof faqs].map((faq, index) => (
               <motion.div
                 key={index}
                 className="bg-blue-50 border border-blue-100 rounded-xl shadow-md mb-4 overflow-hidden"
@@ -299,7 +405,8 @@ const HelpCenter: React.FC = () => {
                   </motion.div>
                 )}
               </motion.div>
-            ))}
+            ))
+            )}
           </div>
         </div>
       </section>

@@ -9,12 +9,11 @@ export const courses: Course[] = [
     level: 'Beginner',
     price: '16999',
     features: [
-      'React & TypeScript',
-      'Node.js & Express',
-      'Database Design',
-      'API Development',
-      'Deployment & DevOps',
-      'Real-world Projects'
+      'Core Java Programming',
+      'Backend Development',
+      'Frontend Development',
+      'Database Management',
+      'Project Development'
     ],
     image: '/images/courses/Full-Stack-Developer-NodeJS.png'
   },
@@ -28,10 +27,11 @@ export const courses: Course[] = [
     features: [
       'Python Programming',
       'Statistics & Mathematics',
+      'Data Analysis',
       'Machine Learning',
-      'Deep Learning',
+      'Deep Learning & NLP',
       'Data Visualization',
-      'Capstone Project'
+      'Project Development'
     ],
     image: 'public/images/courses/data-science.jpg'
   },
@@ -43,6 +43,8 @@ export const courses: Course[] = [
     level: 'Advanced',
     price: '19999',
     features: [
+      'Introduction to AI & Programming',
+      'Machine Learning',
       'Neural Networks & Deep Learning',
       'Natural Language Processing',
       'Computer Vision',
@@ -60,14 +62,15 @@ export const courses: Course[] = [
     level: 'Intermediate',
     price: '16999',
     features: [
+      'Introduction to UI/UX Design',
       'React Native',
-      'Mobile UI/UX',
-      'State Management',
+      'Mobile UI/UX (Figma, Adobe XD)',
+      'State Management ',
       'API Integration',
-      'App Store Deployment',
+      'App Store Deployment (iOS, Android)',
       'Performance Optimization'
     ],
-    image: '/images/courses/mobile-development.jpg'
+    image: '/images/courses/ui-ux-design.jpg'
   },
   {
     id: 'cybersecurity',
@@ -77,6 +80,7 @@ export const courses: Course[] = [
     level: 'Intermediate',
     price: '16999',
     features: [
+      'Introduction to Cybersecurity',
       'Network Security',
       'Ethical Hacking',
       'Cryptography',
@@ -94,12 +98,13 @@ export const courses: Course[] = [
     level: 'Beginner',
     price: '9999',
     features: [
+      'Python Programming Fundamentals',
       'Python & Django',
       'REST API Development',
       'Frontend with React',
       'Database Integration',
-      'Deployment & DevOps',
-      'Real-world Projects'
+      'SQL',
+      'Project Development'
     ],
     image: '/images/courses/python-full-stack.jpg'
   },
@@ -111,12 +116,13 @@ export const courses: Course[] = [
     level: 'Intermediate',
     price: '16999',
     features: [
-      'Core Data Structures',
+      'Introduction to Data Structures & Algorithms',
+      'Core Data Structures & Algorithms',
       'Algorithm Design',
       'Problem Solving Techniques',
       'Coding Interview Preparation',
       'Time & Space Complexity',
-      'Hands-on Practice'
+      'Project Development'
     ],
     image: '/images/courses/data-structures-algorithms.jpg'
   },
@@ -128,11 +134,12 @@ export const courses: Course[] = [
     level: 'Advanced',
     price: '26999',
     features: [
+      'Fundamentals of VLSI Design',
       'IC Design',
       'HDL Coding',
       'Simulation',
       'EDA Tools',
-    
+      'Project Development'
     ],
     image: '/images/courses/VLSI-Design.png'
   },
@@ -144,8 +151,9 @@ export const courses: Course[] = [
     level: 'Beginner',
     price: '14999',
     features: [
+      'Fundamentals of Digital Marketing',
       'SEO & SEM Optimization',
-      'Social Media Marketing (Meta, LinkedIn, TikTok)',
+      'Social Media Marketing (Meta, LinkedIn, Twitter)',
       'Content Marketing & Strategy',
       'Google Analytics & Data Analysis',
       'Email Marketing & Automation',
@@ -164,11 +172,13 @@ export const courses: Course[] = [
     level: 'Beginner',
     price: '17999',
     features: [
+      'Fundamentals of Human Resources Management',
       'Recruitment & Selection',
       'Employee Relations',
       'Performance Management',
       'Training & Development',
       'Compensation & Benefits',
+      'HR Compliance and Legal Framework',
       'HR Analytics & Technology'
     ],
     image: '/images/courses/human-resources.jpg'
@@ -181,6 +191,7 @@ export const courses: Course[] = [
     level: 'Beginner',
     price: '19999',
     features: [
+      'Fundamentals of Finance Management',
       'Financial Analysis',
       'Risk Management',
       'Corporate Finance',
@@ -197,6 +208,7 @@ export const courses: Course[] = [
     level: 'Beginner',
     price: '15999',
     features: [
+      'Fundamentals of Business Development',
       'Sales Fundamentals & Techniques',
       'Business Development Strategies',
       'Client Acquisition & Retention',
@@ -218,6 +230,7 @@ export const courses: Course[] = [
     level: 'Intermediate',
     price: '18999',
     features: [
+      'Introduction to IoT',
       'IoT Architecture & Protocols',
       'Sensor Integration & Data Collection',
       'Microcontroller Programming (Arduino, ESP32)',
@@ -225,8 +238,6 @@ export const courses: Course[] = [
       'Cloud Platforms (AWS IoT, Azure IoT)',
       'Data Analytics & Visualization',
       'IoT Security & Privacy',
-      'Edge Computing',
-      'Real-time Data Processing',
       'IoT Project Development'
     ],
     image: '/images/courses/iot-development.jpg'
@@ -239,6 +250,7 @@ export const courses: Course[] = [
     level: 'Intermediate',
     price: '19999',
     features: [
+      'Introduction to Embedded Systems and Applications',
       'Microcontroller Architecture',
       'C/C++ Programming for Embedded Systems',
       'Real-time Operating Systems (RTOS)',
@@ -260,14 +272,16 @@ export const courses: Course[] = [
     level: 'Beginner',
     price: '12999',
     features: [
+      'Introduction to Data Analysis',
       'Statistical Analysis & Mathematics',
+      'Introduction to Machine Learning',
       'SQL Database Queries',
       'Excel Advanced Functions',
-      'Data Visualization (Tableau, Power BI)',
+      'Data Visualization',
       'Python for Data Analysis',
       'Data Cleaning & Preprocessing',
-      'Business Intelligence Tools',
-      'Dashboard Creation',
+      'Business Intelligence Tools (Tableau, Power BI)',
+      'Advanced Data Analytics and Statistics',
       'Report Writing & Presentation',
       'Data Storytelling'
     ],

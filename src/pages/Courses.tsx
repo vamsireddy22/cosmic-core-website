@@ -9,6 +9,8 @@ const Courses: React.FC = () => {
   const [selectedLevel, setSelectedLevel] = useState<string>('All');
   const [selectedDuration, setSelectedDuration] = useState<string>('All');
   const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
+  const [selectedCourse, setSelectedCourse] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const levels = ['All', 'Beginner', 'Intermediate', 'Advanced'];
   const durations = ['All', '3 months', '4 months', '6 months'];
@@ -23,6 +25,16 @@ const Courses: React.FC = () => {
       }
       return newSet;
     });
+  };
+
+  const openCourseDetails = (course: any) => {
+    setSelectedCourse(course);
+    setIsModalOpen(true);
+  };
+
+  const closeCourseDetails = () => {
+    setSelectedCourse(null);
+    setIsModalOpen(false);
   };
 
   const filteredCourses = useMemo(() => {
@@ -172,10 +184,27 @@ const Courses: React.FC = () => {
                   whileHover={{ y: -5 }}
                 >
                   {/* Course Image */}
-                  <div className="mobile-image-container flex items-center justify-center bg-gradient-to-br from-cyan-400 to-cyan-600">
-                    <div className="text-white text-4xl sm:text-6xl font-bold">
-                      {course.title.split(' ').map(word => word[0]).join('')}
-                    </div>
+                  <div className="mobile-image-container flex items-center justify-center bg-gradient-to-br from-cyan-400 to-cyan-600 overflow-hidden">
+                    {course.image ? (
+                      <img
+                        src={course.image}
+                        alt={course.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to initials if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<div class="text-white text-4xl sm:text-6xl font-bold">${course.title.split(' ').map(word => word[0]).join('')}</div>`;
+                          }
+                        }}
+                      />
+                    ) : (
+                      <div className="text-white text-4xl sm:text-6xl font-bold">
+                        {course.title.split(' ').map(word => word[0]).join('')}
+                      </div>
+                    )}
                   </div>
 
                   {/* Course Content */}
@@ -208,42 +237,24 @@ const Courses: React.FC = () => {
                       <span>{course.duration}</span>
                     </div>
 
-                    {/* Course Features */}
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-secondary-900 mb-3">What you'll learn:</h4>
-                      <ul className="space-y-2">
-                        {(expandedCourses.has(course.id) ? course.features : course.features.slice(0, 4)).map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-sm text-secondary-600">
-                            <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            {feature}
-                          </li>
-                        ))}
-                        {course.features.length > 4 && (
-                          <li>
-                            <button
-                              onClick={() => toggleCourseExpansion(course.id)}
-                              className="text-sm text-primary-600 font-medium hover:text-primary-700 transition-colors duration-200"
-                            >
-                              {expandedCourses.has(course.id) 
-                                ? 'Show less' 
-                                : `+${course.features.length - 4} more topics`
-                              }
-                            </button>
-                          </li>
-                        )}
-                      </ul>
-                    </div>
+                    {/* Course Features - Hidden for all courses */}
 
-                    {/* CTA Button */}
-                    <Link 
-                      to="/contact" 
-                      state={{ course: course.title, activeTab: 'contact-info' }}
-                      className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 inline-block text-center"
-                    >
-                      Enroll Now
-                    </Link>
+                    {/* Action Buttons */}
+                    <div className="space-y-3">
+                      <button
+                        onClick={() => openCourseDetails(course)}
+                        className="w-full bg-secondary-100 text-blue-900 hover:bg-secondary-200 transition-colors duration-200 py-2 px-4 rounded-lg font-medium"
+                      >
+                        More Details
+                      </button>
+                      <Link 
+                        to="/contact" 
+                        state={{ course: course.title, activeTab: 'contact-info' }}
+                        className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 inline-block text-center"
+                      >
+                        Enroll Now
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -343,6 +354,213 @@ const Courses: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Course Details Modal */}
+      {isModalOpen && selectedCourse && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <motion.div
+            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-xl">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-2xl font-bold text-secondary-900 mb-2">
+                    {selectedCourse.title}
+                  </h2>
+                  <div className="flex items-center gap-4 text-sm text-secondary-600">
+                    <span className={`px-3 py-1 rounded-full font-medium ${getLevelColor(selectedCourse.level)}`}>
+                      {selectedCourse.level}
+                    </span>
+                    <span className="flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {selectedCourse.duration}
+                    </span>
+                    <span className="text-xl font-bold text-primary-600">
+                      ₹{selectedCourse.price}
+                    </span>
+                  </div>
+                </div>
+                <button
+                  onClick={closeCourseDetails}
+                  className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              {/* Course Description */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-3">About This Course</h3>
+                <p className="text-secondary-600 leading-relaxed">
+                  {selectedCourse.description}
+                </p>
+              </div>
+
+              {/* What You'll Learn */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-3">What You'll Learn</h3>
+                <ul className="space-y-2">
+                  {selectedCourse.features.map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start text-secondary-600">
+                      <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Course Curriculum */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-3">Course Curriculum</h3>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium text-secondary-900 mb-2">Module 1: Fundamentals</h4>
+                      <p className="text-sm text-secondary-600">Core concepts, basic principles, and foundational knowledge</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-secondary-900 mb-2">Module 2: Intermediate Concepts</h4>
+                      <p className="text-sm text-secondary-600">Advanced topics, best practices, and industry standards</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-secondary-900 mb-2">Module 3: Hands-on Projects</h4>
+                      <p className="text-sm text-secondary-600">Real-world projects, case studies, and practical applications</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-secondary-900 mb-2">Module 4: Advanced Topics</h4>
+                      <p className="text-sm text-secondary-600">Expert-level concepts, optimization, and industry trends</p>
+                    </div>
+                    <div className="pt-2 border-t border-gray-200">
+                      <p className="text-sm text-secondary-600">
+                        <strong>Assessment:</strong> Weekly assignments, mid-term project, final capstone project, and peer reviews
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Prerequisites */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-3">Prerequisites & Requirements</h3>
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="font-medium text-blue-800 mb-1">Technical Requirements</h4>
+                      <ul className="text-sm text-blue-700 space-y-1">
+                        <li>• Computer with Windows/Mac/Linux</li>
+                        <li>• Stable internet connection (minimum 10 Mbps)</li>
+                        <li>• Webcam and microphone for live sessions</li>
+                        <li>• At least 8GB RAM and 50GB free storage</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-blue-800 mb-1">Knowledge Prerequisites</h4>
+                      <p className="text-sm text-blue-700">
+                        {selectedCourse.level === 'Beginner' 
+                          ? 'No prior experience required. Basic computer literacy and enthusiasm to learn.'
+                          : selectedCourse.level === 'Intermediate'
+                          ? 'Basic programming knowledge (any language), understanding of computer fundamentals, and logical thinking skills.'
+                          : 'Strong programming background in at least one language, understanding of algorithms and data structures, and previous project experience.'
+                        }
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Learning Outcomes */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-3">Learning Outcomes</h3>
+                <div className="bg-emerald-50 rounded-lg p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-medium text-emerald-800 mb-2">Technical Skills</h4>
+                      <ul className="text-sm text-emerald-700 space-y-1">
+                        <li>• Master industry-standard tools and technologies</li>
+                        <li>• Build real-world projects and applications</li>
+                        <li>• Understand best practices and design patterns</li>
+                        <li>• Develop problem-solving and debugging skills</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-emerald-800 mb-2">Soft Skills</h4>
+                      <ul className="text-sm text-emerald-700 space-y-1">
+                        <li>• Improve communication and collaboration</li>
+                        <li>• Enhance project management abilities</li>
+                        <li>• Build professional networking skills</li>
+                        <li>• Develop critical thinking and analysis</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Career Opportunities */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-3">Career Opportunities & Outcomes</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-green-50 rounded-lg p-4">
+                    <h4 className="font-medium text-green-800 mb-2">Job Roles</h4>
+                    <ul className="text-sm text-green-700 space-y-1">
+                      <li>• {selectedCourse.title} Developer</li>
+                      <li>• Software Engineer</li>
+                      <li>• Technical Consultant</li>
+                      <li>• Project Manager</li>
+                      <li>• Solution Architect</li>
+                      <li>• Technical Lead</li>
+                    </ul>
+                  </div>
+                  <div className="bg-purple-50 rounded-lg p-4">
+                    <h4 className="font-medium text-purple-800 mb-2">Industries</h4>
+                    <ul className="text-sm text-purple-700 space-y-1">
+                      <li>• Technology Companies</li>
+                      <li>• Startups & Scale-ups</li>
+                      <li>• Consulting Firms</li>
+                      <li>• Financial Services</li>
+                      <li>• Healthcare & E-commerce</li>
+                      <li>• Government & Education</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="sticky bottom-0 bg-gray-50 border-t border-gray-200 p-6 rounded-b-xl">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link 
+                  to="/contact" 
+                  state={{ course: selectedCourse.title, activeTab: 'contact-info' }}
+                  className="flex-1 bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 py-3 px-6 rounded-lg font-medium text-center"
+                  onClick={closeCourseDetails}
+                >
+                  Enroll Now
+                </Link>
+                <button
+                  onClick={closeCourseDetails}
+                  className="flex-1 bg-secondary-100 text-secondary-700 hover:bg-secondary-200 transition-colors duration-200 py-3 px-6 rounded-lg font-medium"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };

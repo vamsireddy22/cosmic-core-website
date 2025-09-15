@@ -4,6 +4,19 @@ import { Link } from 'react-router-dom';
 
 const Careers: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [expandedJobs, setExpandedJobs] = useState<Set<number>>(new Set());
+
+  const toggleJobExpansion = (jobId: number) => {
+    setExpandedJobs(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(jobId)) {
+        newSet.delete(jobId);
+      } else {
+        newSet.add(jobId);
+      }
+      return newSet;
+    });
+  };
 
   const jobCategories = [
     { id: 'all', name: 'All Positions', icon: '💼' },
@@ -133,8 +146,7 @@ const Careers: React.FC = () => {
         'Advanced degree in Electronics/Electrical Engineering',
         'Experience with VLSI design tools (Cadence, Synopsys)',
         'Knowledge of Verilog/VHDL',
-        'Understanding of semiconductor physics',
-        'Industry experience in chip design preferred'
+        'Understanding of semiconductor physics'
       ],
       responsibilities: [
         'Develop VLSI curriculum and labs',
@@ -299,7 +311,6 @@ const Careers: React.FC = () => {
       description: 'Join our teaching team as a Business Development & Sales instructor. You will develop and deliver comprehensive sales and business development curriculum covering modern strategies, techniques, and tools to prepare students for successful sales careers.',
       requirements: [
         'Bachelor\'s degree in Business, Marketing, or related field',
-        '3+ years experience in sales and business development',
         'Proven track record in sales performance and client acquisition',
         'Experience with CRM systems and sales tools',
         'Strong communication and presentation skills',
@@ -327,7 +338,6 @@ const Careers: React.FC = () => {
       description: 'Join our teaching team as an Internet of Things(IoT) instructor. You will develop and deliver comprehensive IoT curriculum covering sensor integration, connectivity protocols, cloud platforms, and smart device development to prepare students for successful IoT careers.',
       requirements: [
         'Bachelor\'s degree in Computer Science, Electronics, or related field',
-        '3+ years experience in IoT development and embedded systems',
         'Proficiency in Arduino, ESP32, Raspberry Pi programming',
         'Experience with IoT protocols (MQTT, CoAP, HTTP)',
         'Knowledge of cloud platforms (AWS IoT, Azure IoT, Google Cloud IoT)',
@@ -355,7 +365,6 @@ const Careers: React.FC = () => {
       description: 'Join our teaching team as an Embedded Systems instructor. You will develop and deliver comprehensive embedded systems curriculum covering microcontroller programming, real-time systems, hardware-software integration, and system optimization.',
       requirements: [
         'Bachelor\'s degree in Electronics, Computer Science, or related field',
-        '4+ years experience in embedded systems development',
         'Proficiency in C/C++ programming for embedded systems',
         'Experience with microcontrollers (ARM, AVR, PIC)',
         'Knowledge of real-time operating systems (FreeRTOS, RTX)',
@@ -383,7 +392,6 @@ const Careers: React.FC = () => {
       description: 'Join our teaching team as a Data Analyst instructor. You will develop and deliver comprehensive data analysis curriculum covering statistical analysis, data visualization, SQL, Excel, and business intelligence tools to prepare students for successful data analyst careers.',
       requirements: [
         'Bachelor\'s degree in Statistics, Mathematics, Computer Science, or related field',
-        '3+ years experience in data analysis and business intelligence',
         'Proficiency in SQL, Excel, and data visualization tools',
         'Experience with Python for data analysis (pandas, numpy)',
         'Knowledge of statistical analysis and data modeling',
@@ -599,15 +607,30 @@ const Careers: React.FC = () => {
                   <div className="mb-3">
                     <h4 className="font-semibold text-secondary-900 mb-1 text-sm">Requirements:</h4>
                     <ul className="text-sm text-secondary-600 space-y-1">
-                      {job.requirements.slice(0, 3).map((req, idx) => (
+                      {(expandedJobs.has(job.id) ? job.requirements : job.requirements.slice(0, 3)).map((req, idx) => (
                         <li key={idx} className="flex items-start">
                           <span className="text-primary-600 mr-2">•</span>
                           {req}
                         </li>
                       ))}
                       {job.requirements.length > 3 && (
-                        <li className="text-primary-600 text-sm">
-                          +{job.requirements.length - 3} more requirements
+                        <li>
+                          <button
+                            onClick={() => toggleJobExpansion(job.id)}
+                            className="text-primary-600 text-sm hover:text-primary-700 font-medium transition-colors duration-200 flex items-center"
+                          >
+                            {expandedJobs.has(job.id) ? (
+                              <>
+                                <span className="mr-1">−</span>
+                                Show less
+                              </>
+                            ) : (
+                              <>
+                                <span className="mr-1">+</span>
+                                {job.requirements.length - 3} more requirements
+                              </>
+                            )}
+                          </button>
                         </li>
                       )}
                     </ul>
