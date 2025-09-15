@@ -8,24 +8,12 @@ const Courses: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedLevel, setSelectedLevel] = useState<string>('All');
   const [selectedDuration, setSelectedDuration] = useState<string>('All');
-  const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
   const [selectedCourse, setSelectedCourse] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const levels = ['All', 'Beginner', 'Intermediate', 'Advanced'];
   const durations = ['All', '3 months', '4 months', '6 months'];
 
-  const toggleCourseExpansion = (courseId: string) => {
-    setExpandedCourses(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(courseId)) {
-        newSet.delete(courseId);
-      } else {
-        newSet.add(courseId);
-      }
-      return newSet;
-    });
-  };
 
   const openCourseDetails = (course: any) => {
     setSelectedCourse(course);
