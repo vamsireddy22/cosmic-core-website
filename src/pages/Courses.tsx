@@ -45,6 +45,25 @@ const Courses: React.FC = () => {
     }
   };
 
+  const getLevelDotColor = (course: any) => {
+    // Add colored dots for all course levels
+    switch (course.level) {
+      case 'Beginner': return 'bg-green-500';
+      case 'Intermediate': return 'bg-yellow-500';
+      case 'Advanced': return 'bg-red-500';
+      default: return null;
+    }
+  };
+
+  const getLevelIcon = (level: string) => {
+    switch (level) {
+      case 'Beginner': return '🟢';
+      case 'Intermediate': return '🟡';
+      case 'Advanced': return '🔴';
+      default: return '⚪';
+    }
+  };
+
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -116,6 +135,9 @@ const Courses: React.FC = () => {
                         : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
+                    {level !== 'All' && (
+                      <span className="mr-2 text-sm">{getLevelIcon(level)}</span>
+                    )}
                     {level}
                   </button>
                 ))}
@@ -199,8 +221,8 @@ const Courses: React.FC = () => {
                   <div className="p-4 sm:p-6">
                     {/* Course Header */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getLevelColor(course.level)}`}>
-                        {course.level}
+                      <span className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${getLevelColor(course.level)}`}>
+                        {getLevelIcon(course.level)} {course.level}
                       </span>
                       <span className="text-xl sm:text-2xl font-bold text-primary-600">
                         {course.price}

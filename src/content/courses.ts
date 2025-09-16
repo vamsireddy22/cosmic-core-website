@@ -70,7 +70,7 @@ export const courses: Course[] = [
       'App Store Deployment (iOS, Android)',
       'Performance Optimization'
     ],
-    image: '/images/courses/ui-ux-design.jpg'
+    image: '/images/ui-ux-design.png'
   },
   {
     id: 'cybersecurity',
