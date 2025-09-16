@@ -45,16 +45,6 @@ const Courses: React.FC = () => {
     }
   };
 
-  const getLevelDotColor = (course: any) => {
-    // Add colored dots for all course levels
-    switch (course.level) {
-      case 'Beginner': return 'bg-green-500';
-      case 'Intermediate': return 'bg-yellow-500';
-      case 'Advanced': return 'bg-red-500';
-      default: return null;
-    }
-  };
-
   const getLevelIcon = (level: string) => {
     switch (level) {
       case 'Beginner': return '🟢';
