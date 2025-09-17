@@ -56,6 +56,11 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Main content spacing to account for Header with contact bar */
+  .main-content {
+    @apply pt-24 sm:pt-28 lg:pt-32;
+  }
+
   /* Mobile-optimized card styles */
   .mobile-card {
     @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
@@ -98,6 +103,7 @@
     @apply min-h-screen flex items-center justify-center;
     @apply py-20 sm:py-24 lg:py-32;
     @apply px-4 sm:px-6 lg:px-8;
+    @apply pt-32 sm:pt-36 lg:pt-40; /* Account for TopBar + Header */
   }
 
   /* Mobile-friendly navigation */

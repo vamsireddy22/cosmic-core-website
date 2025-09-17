@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const TermsOfService: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50 pt-32 sm:pt-36 lg:pt-40">
       <div className="container-custom section-padding">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
