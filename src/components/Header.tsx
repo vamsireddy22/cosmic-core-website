@@ -77,7 +77,7 @@ const Header: React.FC = () => {
         <div className="container-custom">
           <div className="flex items-center text-sm">
             {/* Contact Information */}
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-3 sm:space-x-6">
               <motion.a
                 href={`mailto:${contactInfo.email}`}
                 className="flex items-center space-x-2 hover:text-primary-200 transition-colors duration-200"
@@ -124,12 +124,12 @@ const Header: React.FC = () => {
             <div className="flex-1 min-w-16"></div>
 
             {/* Social Media Links */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-1 sm:space-x-2">
               <motion.a
                 href={contactInfo.socialMedia.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 hover:text-primary-200 transition-colors duration-200"
+                className="p-1 sm:p-3 hover:text-primary-200 transition-colors duration-200"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="LinkedIn"
@@ -143,7 +143,7 @@ const Header: React.FC = () => {
                 href={contactInfo.socialMedia.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 hover:text-primary-200 transition-colors duration-200"
+                className="p-1 sm:p-3 hover:text-primary-200 transition-colors duration-200"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="Twitter"
@@ -157,7 +157,7 @@ const Header: React.FC = () => {
                 href={contactInfo.socialMedia.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 hover:text-primary-200 transition-colors duration-200"
+                className="p-1 sm:p-3 hover:text-primary-200 transition-colors duration-200"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="Facebook"
@@ -171,7 +171,7 @@ const Header: React.FC = () => {
                 href={contactInfo.socialMedia.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 hover:text-primary-200 transition-colors duration-200"
+                className="p-1 sm:p-3 hover:text-primary-200 transition-colors duration-200"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="Instagram"
@@ -185,7 +185,7 @@ const Header: React.FC = () => {
                 href={contactInfo.socialMedia.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 hover:text-primary-200 transition-colors duration-200"
+                className="p-1 sm:p-3 hover:text-primary-200 transition-colors duration-200"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="WhatsApp"
@@ -199,7 +199,7 @@ const Header: React.FC = () => {
                 href={contactInfo.socialMedia.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 hover:text-primary-200 transition-colors duration-200"
+                className="p-1 sm:p-3 hover:text-primary-200 transition-colors duration-200"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="YouTube"
@@ -213,9 +213,9 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Scrolling Text */}
-        <div className="md:hidden absolute inset-0 flex items-center justify-center">
+        <div className="md:hidden flex items-center justify-center py-1">
           <motion.div
-            className="text-center text-primary-200 text-sm"
+            className="text-center text-primary-200 text-xs"
             animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ 
               duration: 2, 
