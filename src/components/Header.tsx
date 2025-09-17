@@ -212,20 +212,6 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Scrolling Text */}
-        <div className="md:hidden flex items-center justify-center py-1">
-          <motion.div
-            className="text-center text-primary-200 text-xs"
-            animate={{ opacity: [0.7, 1, 0.7] }}
-            transition={{ 
-              duration: 2, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-          >
-            🎓 Path to Career with CosmicCore Technologies
-          </motion.div>
-        </div>
       </div>
 
       {/* Main Navigation */}
