@@ -215,7 +215,7 @@ const Header: React.FC = () => {
         {/* Mobile Scrolling Text */}
         <div className="md:hidden absolute inset-0 flex items-center justify-center">
           <motion.div
-            className="text-center text-primary-200 text-xs"
+            className="text-center text-primary-200 text-sm"
             animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ 
               duration: 2, 
@@ -223,7 +223,7 @@ const Header: React.FC = () => {
               ease: "easeInOut" 
             }}
           >
-            🎓 Transform Your Career Today
+            🎓 Path to Career with CosmicCore Technologies
           </motion.div>
         </div>
       </div>
