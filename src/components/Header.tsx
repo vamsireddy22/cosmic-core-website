@@ -73,7 +73,7 @@ const Header: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Contact Information Bar */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-1 sm:py-0.25 overflow-hidden">
+      <div className="hidden sm:block bg-gradient-to-r from-primary-600 to-primary-700 text-white py-0.25 overflow-hidden">
         <div className="container-custom">
           <div className="flex items-center text-xs sm:text-sm">
             {/* Contact Information */}
