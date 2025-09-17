@@ -75,29 +75,27 @@ const Header: React.FC = () => {
       {/* Contact Information Bar */}
       <div className="hidden sm:block bg-gradient-to-r from-primary-600 to-primary-700 text-white py-0.25 overflow-hidden">
         <div className="container-custom">
-          <div className="flex items-center text-xs sm:text-sm">
+          <div className="flex items-center text-xs sm:text-sm whitespace-nowrap">
             {/* Contact Information */}
-            <div className="flex items-center space-x-2 sm:space-x-6">
+            <div className="flex items-center space-x-1 sm:space-x-4 lg:space-x-6">
               <motion.a
                 href={`mailto:${contactInfo.email}`}
-                className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-200 transition-colors duration-200 p-1"
+                className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200 p-1"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="text-primary-200 text-sm sm:text-base">📧</span>
-                <span className="hidden sm:inline">{contactInfo.email}</span>
-                <span className="sm:hidden text-xs">Email</span>
+                <span className="text-primary-200 text-xs sm:text-sm">📧</span>
+                <span className="text-xs sm:text-sm truncate max-w-[200px] sm:max-w-none">{contactInfo.email}</span>
               </motion.a>
               
               <motion.a
                 href={`tel:${contactInfo.phone}`}
-                className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-200 transition-colors duration-200 p-1"
+                className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200 p-1"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="text-primary-200 text-sm sm:text-base">📞</span>
-                <span className="hidden sm:inline">{contactInfo.phone}</span>
-                <span className="sm:hidden text-xs">Call</span>
+                <span className="text-primary-200 text-xs sm:text-sm">📞</span>
+                <span className="text-xs sm:text-sm">{contactInfo.phone}</span>
               </motion.a>
             </div>
 
