@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import logoImage from '../assets/cosmicLogo.jpeg';
 
 const Careers: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -586,6 +587,26 @@ const Careers: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
+                {/* Logo Section */}
+                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-3 border-b border-cyan-200">
+                  <div className="flex justify-center">
+                    <img 
+                      src={logoImage}
+                      alt="CosmicCore Technologies Logo" 
+                      className="w-30 h-22 md:w-34 md:h-24 object-contain"
+                      onError={(e) => {
+                        console.log('Logo failed to load');
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.innerHTML = '<div class="text-blue-600 text-sm font-bold">CosmicCore Technologies</div>';
+                        }
+                      }}
+                    />
+                  </div>
+                </div>
+
                 <div className="p-4">
                   <div className="flex items-start justify-between mb-3">
                                          <div>

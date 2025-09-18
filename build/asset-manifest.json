@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/cosmic-core-website/static/css/main.79bcd95e.css",
-    "main.js": "/cosmic-core-website/static/js/main.53dca57c.js",
+    "main.css": "/cosmic-core-website/static/css/main.d9d19d35.css",
+    "main.js": "/cosmic-core-website/static/js/main.ea38652a.js",
     "static/js/453.1775058e.chunk.js": "/cosmic-core-website/static/js/453.1775058e.chunk.js",
     "static/media/cosmicLogo.jpeg": "/cosmic-core-website/static/media/cosmicLogo.5b64b75746ac33c07c0f.jpeg",
     "index.html": "/cosmic-core-website/index.html",
-    "main.79bcd95e.css.map": "/cosmic-core-website/static/css/main.79bcd95e.css.map",
-    "main.53dca57c.js.map": "/cosmic-core-website/static/js/main.53dca57c.js.map",
+    "main.d9d19d35.css.map": "/cosmic-core-website/static/css/main.d9d19d35.css.map",
+    "main.ea38652a.js.map": "/cosmic-core-website/static/js/main.ea38652a.js.map",
     "453.1775058e.chunk.js.map": "/cosmic-core-website/static/js/453.1775058e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.79bcd95e.css",
-    "static/js/main.53dca57c.js"
+    "static/css/main.d9d19d35.css",
+    "static/js/main.ea38652a.js"
   ]
 }

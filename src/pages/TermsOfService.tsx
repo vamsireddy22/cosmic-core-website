@@ -3,40 +3,73 @@ import { motion } from 'framer-motion';
 
 const TermsOfService: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container-custom section-padding">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto"
-        >
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">
-              Terms of Service
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-blue-100 via-white to-cyan-100 mobile-hero relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </div>
+        
+        <div className="container-custom relative z-10">
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-secondary-900 mb-6">
+              <span className="text-blue-900">Terms of</span> <span className="text-cyan-800">Service</span>
             </h1>
-            <p className="text-lg text-secondary-600">
-              Last updated: {new Date().toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}
-            </p>
-          </div>
+          </motion.div>
+        </div>
+      </section>
 
-          {/* Content */}
+      {/* Content Section */}
+      <section className="section-padding bg-gradient-to-br from-cyan-50 to-blue-50">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-lg shadow-lg p-8 md:p-12"
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto"
           >
+
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white rounded-xl shadow-lg p-8 md:p-12 border border-cyan-100"
+            >
             <div className="prose prose-lg max-w-none">
               
               {/* Introduction */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">1. Introduction</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">1. Introduction</h2>
                 <p className="text-secondary-700 mb-4">
                   Welcome to CosmicCore Technologies ("we," "our," or "us"). These Terms of Service ("Terms") govern your use of our website, services, and educational programs. By accessing or using our services, you agree to be bound by these Terms.
                 </p>
@@ -46,8 +79,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Acceptance of Terms */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">2. Acceptance of Terms</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">2. Acceptance of Terms</h2>
                 <p className="text-secondary-700 mb-4">
                   By accessing, browsing, or using our website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy.
                 </p>
@@ -57,8 +90,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Description of Services */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">3. Description of Services</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">3. Description of Services</h2>
                 <p className="text-secondary-700 mb-4">
                   CosmicCore Technologies provides educational services including:
                 </p>
@@ -75,8 +108,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* User Accounts */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">4. User Accounts</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">4. User Accounts</h2>
                 <p className="text-secondary-700 mb-4">
                   To access certain features of our services, you may be required to create an account. You agree to:
                 </p>
@@ -90,8 +123,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Payment Terms */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">5. Payment Terms</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">5. Payment Terms</h2>
                 <p className="text-secondary-700 mb-4">
                   For paid services and courses:
                 </p>
@@ -105,8 +138,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Intellectual Property */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">6. Intellectual Property Rights</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">6. Intellectual Property Rights</h2>
                 <p className="text-secondary-700 mb-4">
                   All content, materials, and intellectual property on our platform, including but not limited to:
                 </p>
@@ -125,8 +158,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* User Conduct */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">7. User Conduct</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">7. User Conduct</h2>
                 <p className="text-secondary-700 mb-4">
                   You agree not to:
                 </p>
@@ -142,8 +175,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Privacy Policy */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">8. Privacy Policy</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">8. Privacy Policy</h2>
                 <p className="text-secondary-700 mb-4">
                   Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference.
                 </p>
@@ -153,8 +186,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Limitation of Liability */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">9. Limitation of Liability</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">9. Limitation of Liability</h2>
                 <p className="text-secondary-700 mb-4">
                   TO THE MAXIMUM EXTENT PERMITTED BY LAW, COSMICCORE TECHNOLOGIES SHALL NOT BE LIABLE FOR:
                 </p>
@@ -170,8 +203,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Disclaimers */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">10. Disclaimers</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">10. Disclaimers</h2>
                 <p className="text-secondary-700 mb-4">
                   OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
                 </p>
@@ -184,8 +217,8 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Termination */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">11. Termination</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">11. Termination</h2>
                 <p className="text-secondary-700 mb-4">
                   We may terminate or suspend your access to our services immediately, without prior notice, for any reason, including breach of these Terms.
                 </p>
@@ -196,8 +229,8 @@ const TermsOfService: React.FC = () => {
 
 
               {/* Changes to Terms */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">12. Changes to Terms</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">12. Changes to Terms</h2>
                 <p className="text-secondary-700 mb-4">
                   We reserve the right to modify these Terms at any time. We will notify users of significant changes by:
                 </p>
@@ -212,27 +245,40 @@ const TermsOfService: React.FC = () => {
               </section>
 
               {/* Contact Information */}
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-4">13. Contact Information</h2>
+              <section className="mb-8 bg-cyan-25 p-6 rounded-lg border border-cyan-100">
+                <h2 className="text-2xl font-bold text-white bg-cyan-600 px-4 py-2 rounded-lg mb-4">13. Contact Information</h2>
                 <p className="text-secondary-700 mb-4">
                   If you have any questions about these Terms, please contact us at:
                 </p>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-secondary-700">
-                    <strong>Email:</strong> cosmiccoretechnologies@gmail.com<br />
-                    <strong>Address:</strong> COSMICCORE TECHNOLOGIES PVT LTD<br />
-                    Bangalore, Karnataka, India<br />
-                    <strong>Phone:</strong> +91 9901480919
-                  </p>
+                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-6 shadow-lg">
+                  {/* Logo Color Tab */}
+                  <div className="flex items-center mb-4">
+                    <div className="flex space-x-2">
+                      <div className="w-4 h-4 bg-blue-600 rounded-full"></div>
+                      <div className="w-4 h-4 bg-cyan-500 rounded-full"></div>
+                      <div className="w-4 h-4 bg-white border border-gray-300 rounded-full"></div>
+                    </div>
+                    <span className="ml-3 text-sm font-medium text-blue-800">CosmicCore Brand Colors</span>
+                  </div>
+                  
+                  <div className="bg-white p-4 rounded-lg border border-blue-100">
+                    <p className="text-secondary-700">
+                      <strong>Email:</strong> cosmiccoretechnologies@gmail.com<br />
+                      <strong>Address:</strong> COSMICCORE TECHNOLOGIES PVT LTD<br />
+                      Bangalore, Karnataka, India<br />
+                      <strong>Phone:</strong> +91 9901480919
+                    </p>
+                  </div>
                 </div>
               </section>
 
 
 
             </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

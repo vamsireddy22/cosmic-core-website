@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { courses } from '../content/courses';
 import { features } from '../content/features';
+import logoImage from '../assets/cosmicLogo.jpeg';
 
 const Courses: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -368,10 +369,30 @@ const Courses: React.FC = () => {
             {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-xl">
               <div className="flex justify-between items-start">
-                <div>
-                  <h2 className="text-2xl font-bold text-secondary-900 mb-2">
-                    {selectedCourse.title}
-                  </h2>
+                <div className="flex-1">
+                  {/* Course Title with Logo */}
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-2 rounded-lg shadow-sm border border-blue-200 flex-shrink-0">
+                      <img 
+                        src={logoImage}
+                        alt="CosmicCore Technologies Logo" 
+                        className="w-16 h-10 md:w-20 md:h-12 object-contain"
+                        onError={(e) => {
+                          console.log('Logo failed to load');
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = '<div class="text-blue-600 text-sm font-bold">CosmicCore</div>';
+                          }
+                        }}
+                      />
+                    </div>
+                    <h2 className="text-2xl font-bold text-secondary-900">
+                      {selectedCourse.title}
+                    </h2>
+                  </div>
+                  
                   <div className="flex items-center gap-4 text-sm text-secondary-600">
                     <span className={`px-3 py-1 rounded-full font-medium ${getLevelColor(selectedCourse.level)}`}>
                       {selectedCourse.level}
@@ -389,7 +410,7 @@ const Courses: React.FC = () => {
                 </div>
                 <button
                   onClick={closeCourseDetails}
-                  className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                  className="text-gray-400 hover:text-gray-600 transition-colors duration-200 ml-4"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

@@ -11,6 +11,8 @@ import Projects from './pages/Projects';
 import HelpCenter from './pages/HelpCenter';
 import Careers from './pages/Careers';
 import TermsOfService from './pages/TermsOfService';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 
 
@@ -32,6 +34,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/help" element={<HelpCenter />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/terms" element={<TermsOfService />} />
           </Routes>
         </main>
