@@ -58,7 +58,7 @@
 
   /* Main content spacing to account for Header with contact bar */
   .main-content {
-    @apply pt-24 sm:pt-28 lg:pt-32;
+    @apply pt-16 sm:pt-28 lg:pt-32;
   }
 
   /* Mobile-optimized card styles */
@@ -103,7 +103,7 @@
     @apply min-h-screen flex items-center justify-center;
     @apply py-20 sm:py-24 lg:py-32;
     @apply px-4 sm:px-6 lg:px-8;
-    @apply pt-32 sm:pt-36 lg:pt-40; /* Account for TopBar + Header */
+    @apply pt-20 sm:pt-36 lg:pt-40; /* Account for Header only on mobile, TopBar + Header on larger screens */
   }
 
   /* Mobile-friendly navigation */
