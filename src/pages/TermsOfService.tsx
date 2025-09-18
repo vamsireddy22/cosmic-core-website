@@ -98,7 +98,7 @@ const TermsOfService: React.FC = () => {
                 <ul className="list-disc list-inside text-secondary-700 mb-4 space-y-2">
                   <li>All fees are non-refundable unless otherwise specified</li>
                   <li>Payment must be made in full before course access is granted</li>
-                  <li>We reserve the right to change pricing with 30 days notice</li>
+                  <li>We reserve the right to change pricing with 7 days notice</li>
                   <li>You are responsible for all applicable taxes</li>
                   <li>Payment disputes must be reported within 30 days of the transaction</li>
                 </ul>
@@ -220,7 +220,8 @@ const TermsOfService: React.FC = () => {
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-secondary-700">
                     <strong>Email:</strong> cosmiccoretechnologies@gmail.com<br />
-                    <strong>Address:</strong> Bangalore, Karnataka, India<br />
+                    <strong>Address:</strong> COSMICCORE TECHNOLOGIES PVT LTD<br />
+                    Bangalore, Karnataka, India<br />
                     <strong>Phone:</strong> +91 9901480919
                   </p>
                 </div>

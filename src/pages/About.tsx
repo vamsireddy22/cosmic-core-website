@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { aboutContent } from '../content/about';
+import logoImage from '../assets/cosmicLogo.jpeg';
 
 const About: React.FC = () => {
   return (
@@ -158,9 +159,26 @@ const About: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
               Our <span className="text-blue-900">Brand</span> <span className="text-cyan-800">Identity</span>
             </h2>
-            <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-2xl mx-auto mb-8">
               Three colors that represent our values and vision
             </p>
+            
+            {/* Logo */}
+            <motion.div
+              className="flex justify-center mb-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-100">
+                <img 
+                  src={logoImage}
+                  alt="CosmicCore Technologies Logo" 
+                  className="w-52 h-30 md:w-60 md:h-44 lg:w-48 lg:h-40 object-contain" 
+                />
+              </div>
+            </motion.div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

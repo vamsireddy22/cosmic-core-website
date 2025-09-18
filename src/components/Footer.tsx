@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { contactInfo } from '../content/contact';
+import logoImage from '../assets/cosmicLogo.jpeg';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -54,7 +55,7 @@ const Footer: React.FC = () => {
             <p className="text-secondary-300 mb-6 leading-relaxed">
               Empowering the next generation of tech professionals through innovative education and hands-on learning experiences.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-6">
               {Object.entries(contactInfo.socialMedia).map(([platform, url]) => (
                 <motion.a
                   key={platform}
@@ -89,6 +90,23 @@ const Footer: React.FC = () => {
                 </motion.a>
               ))}
             </div>
+            
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="flex justify-center lg:justify-start"
+            >
+              <Link to="/" className="flex items-center">
+                <img 
+                  src={logoImage}
+                  alt="CosmicCore Technologies" 
+                  className="w-34 h-26 lg:w-38 lg:h-30 object-contain" 
+                />
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Company Links */}
