@@ -73,11 +73,11 @@ const Header: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Contact Information Bar */}
-      <div className="hidden sm:block bg-gradient-to-r from-primary-600 to-primary-700 text-white py-0.25 overflow-hidden">
+      <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-1 sm:py-0.25 overflow-hidden">
         <div className="container-custom">
-          <div className="flex items-center text-xs sm:text-sm whitespace-nowrap">
+          <div className="flex flex-col sm:flex-row items-center text-xs sm:text-sm whitespace-nowrap space-y-2 sm:space-y-0">
             {/* Contact Information */}
-            <div className="flex items-center space-x-1 sm:space-x-4 lg:space-x-6">
+            <div className="flex items-center space-x-2 sm:space-x-4 lg:space-x-6">
               <motion.a
                 href={`mailto:${contactInfo.email}`}
                 className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200 p-1"
@@ -99,8 +99,8 @@ const Header: React.FC = () => {
               </motion.a>
             </div>
 
-            {/* Spacer */}
-            <div className="flex-1 min-w-8 sm:min-w-16"></div>
+            {/* Spacer - Hidden on mobile */}
+            <div className="hidden sm:block flex-1 min-w-8 sm:min-w-16"></div>
 
             {/* Scrolling Announcement */}
             <div className="hidden lg:flex items-center space-x-4">
@@ -118,11 +118,11 @@ const Header: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Spacer */}
-            <div className="flex-1 min-w-8 sm:min-w-16"></div>
+            {/* Spacer - Hidden on mobile */}
+            <div className="hidden sm:block flex-1 min-w-8 sm:min-w-16"></div>
 
             {/* Social Media Links */}
-            <div className="flex items-center space-x-0.5 sm:space-x-2">
+            <div className="flex items-center space-x-1 sm:space-x-2">
               <motion.a
                 href={contactInfo.socialMedia.linkedin}
                 target="_blank"

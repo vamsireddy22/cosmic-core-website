@@ -7,7 +7,7 @@ const Internships: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-100 via-white to-cyan-100 py-20 pt-32 sm:pt-36 lg:pt-40 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-blue-100 via-white to-cyan-100 mobile-hero relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
