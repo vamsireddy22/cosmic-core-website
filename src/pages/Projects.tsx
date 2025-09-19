@@ -160,7 +160,7 @@ const Projects: React.FC = () => {
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  className="mobile-card overflow-hidden bg-blue-50 border border-blue-100"
+                  className="mobile-card overflow-hidden bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 hover:shadow-lg transition-all duration-300"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -247,7 +247,7 @@ const Projects: React.FC = () => {
             {projectCategories.map((category, index) => (
               <motion.div
                 key={category.title}
-                className="mobile-card text-center bg-blue-100 border border-blue-200"
+                className="mobile-card text-center bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}

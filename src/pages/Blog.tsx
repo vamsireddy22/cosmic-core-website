@@ -7,6 +7,9 @@ const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchParams] = useSearchParams();
   const selectedCategory = searchParams.get('category') || 'All';
+  const [email, setEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscriptionMessage, setSubscriptionMessage] = useState('');
 
   const blogCategories = [
     { id: 'All', name: 'All Posts', icon: '📝' },
@@ -43,6 +46,58 @@ const Blog: React.FC = () => {
       image: '/images/blog/founder-notes.jpg',
       tags: ['Startup', 'Founder', 'Career Advice'],
       featured: false
+    },
+    {
+      id: 3,
+      title: 'How to Build a Tech Career: A Step-by-Step Guide',
+      excerpt: 'Learn the essential steps to build a thriving career in technology, from choosing your path to advancing to senior roles and leadership positions.',
+      content: 'Building a tech career requires planning, continuous learning, and strategic decision-making. Whether you\'re just starting out or looking to advance, here\'s your comprehensive guide to building a thriving career in technology...',
+      category: 'Career',
+      author: 'By JP',
+      date: '2025-08-15',
+      readTime: '8 min read',
+      image: '/images/blog/career-guide.jpg',
+      tags: ['Career Development', 'Tech Career', 'Professional Growth', 'Career Planning'],
+      featured: true
+    },
+    {
+      id: 4,
+      title: 'How to Write an Engaging Blog: A Complete Guide',
+      excerpt: 'Learn the essential steps to create compelling blog content that engages readers, builds authority, and drives traffic to your website.',
+      content: 'Writing an engaging blog requires planning, creativity, and understanding your audience. Whether you\'re starting a personal blog or writing for business, here\'s your complete guide to creating content that resonates with readers...',
+      category: 'Tutorials',
+      author: 'By Raghavendra',
+      date: '2025-09-22',
+      readTime: '6 min read',
+      image: '/images/blog/blog-writing-guide.jpg',
+      tags: ['Blog Writing', 'Content Creation', 'Writing Tips', 'Content Marketing'],
+      featured: false
+    },
+    {
+      id: 5,
+      title: 'How to Transition from Non-Tech to Tech Career',
+      excerpt: 'Learn how to successfully transition from a non-technical background to a thriving tech career with practical steps, strategies, and real-world advice.',
+      content: 'Making the transition from a non-tech career to technology can seem daunting, but it\'s absolutely achievable with the right approach. This comprehensive guide provides practical steps, strategies, and real-world advice to help you successfully transition into a tech career...',
+      category: 'Career',
+      author: 'By Yeswanth',
+      date: '2025-09-22',
+      readTime: '8 min read',
+      image: '/images/blog/career-transition-guide.jpg',
+      tags: ['Career Transition', 'Career Development', 'Tech Career', 'Professional Growth'],
+      featured: false
+    },
+    {
+      id: 6,
+      title: 'Mentorship in Tech: Finding and Being a Mentor',
+      excerpt: 'Discover the power of mentorship in technology careers. Learn how to find the right mentor, become an effective mentor, and build meaningful professional relationships.',
+      content: 'Mentorship is one of the most powerful tools for career growth in technology. Whether you\'re looking for guidance or ready to help others, understanding how to find and be a mentor can accelerate your professional development...',
+      category: 'Education',
+      author: 'By JP',
+      date: '2025-09-22',
+      readTime: '7 min read',
+      image: '/images/blog/tech-mentorship-guide.jpg',
+      tags: ['Mentorship', 'Career Development', 'Professional Growth', 'Tech Community'],
+      featured: false
     }
   ], []);
 
@@ -65,6 +120,35 @@ const Blog: React.FC = () => {
       month: 'long', 
       day: 'numeric' 
     });
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      setSubscriptionMessage('Please enter a valid email address');
+      return;
+    }
+
+    if (!email.includes('@')) {
+      setSubscriptionMessage('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubscribing(true);
+    setSubscriptionMessage('');
+
+    try {
+      // Simulate API call - in a real app, this would be an actual API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setSubscriptionMessage('Thank you for subscribing! You will receive our latest updates.');
+      setEmail('');
+    } catch (error) {
+      setSubscriptionMessage('Something went wrong. Please try again.');
+    } finally {
+      setIsSubscribing(false);
+    }
   };
 
   return (
@@ -187,7 +271,7 @@ const Blog: React.FC = () => {
               {filteredPosts.map((post, index) => (
                 <motion.article
                   key={post.id}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                  className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-cyan-200"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -294,16 +378,39 @@ const Blog: React.FC = () => {
               Subscribe to our newsletter for the latest blog posts, tutorials, and tech insights
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white focus:ring-opacity-50"
-              />
-              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
-                Subscribe
-              </button>
-            </div>
+            <form onSubmit={handleSubscribe} className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                  disabled={isSubscribing}
+                />
+                <button 
+                  type="submit"
+                  disabled={isSubscribing}
+                  className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubscribing ? 'Subscribing...' : 'Subscribe'}
+                </button>
+              </div>
+              {subscriptionMessage && (
+                <motion.div
+                  className={`mt-4 p-3 rounded-lg text-sm ${
+                    subscriptionMessage.includes('Thank you') 
+                      ? 'bg-green-100 text-green-800 border border-green-200' 
+                      : 'bg-red-100 text-red-800 border border-red-200'
+                  }`}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {subscriptionMessage}
+                </motion.div>
+              )}
+            </form>
           </motion.div>
         </div>
       </section>

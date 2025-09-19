@@ -178,7 +178,7 @@ const Courses: React.FC = () => {
               {filteredCourses.map((course, index) => (
                 <motion.div
                   key={course.id}
-                  className="mobile-card overflow-hidden bg-cyan-50 border border-cyan-100"
+                  className="mobile-card overflow-hidden bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 hover:shadow-lg transition-all duration-300"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}

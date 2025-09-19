@@ -520,7 +520,7 @@ const Careers: React.FC = () => {
             ].map((benefit, index) => (
               <motion.div
                 key={benefit.title}
-                className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200"
+                className="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -580,7 +580,7 @@ const Careers: React.FC = () => {
             {filteredJobs.map((job, index) => (
               <motion.div
                 key={job.id}
-                className="bg-cyan-50 border border-cyan-100 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -733,7 +733,7 @@ const Careers: React.FC = () => {
             ].map((step, index) => (
               <motion.div
                 key={step.step}
-                className="text-center bg-cyan-50 border border-cyan-100 rounded-xl p-6"
+                className="text-center bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
