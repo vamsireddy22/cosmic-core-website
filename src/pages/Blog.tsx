@@ -139,11 +139,27 @@ const Blog: React.FC = () => {
     setSubscriptionMessage('');
 
     try {
-      // Simulate API call - in a real app, this would be an actual API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Submit to Formspree for newsletter subscription
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('_subject', 'Newsletter Subscription - CosmicCore Blog');
+      formData.append('_replyto', email);
+      formData.append('source', 'Blog Newsletter');
       
-      setSubscriptionMessage('Thank you for subscribing! You will receive our latest updates.');
-      setEmail('');
+      const response = await fetch('https://formspree.io/f/mldwqnor', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setSubscriptionMessage('Thank you for subscribing! You will receive our latest blog updates.');
+        setEmail('');
+      } else {
+        throw new Error('Subscription failed');
+      }
     } catch (error) {
       setSubscriptionMessage('Something went wrong. Please try again.');
     } finally {
@@ -375,9 +391,10 @@ const Blog: React.FC = () => {
               Stay Updated
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Subscribe to our newsletter for the latest blog posts, tutorials, and tech insights
+              Subscribe to our newsletter and get automatic updates when we publish new blog posts, tutorials, and tech insights
             </p>
             
+            {/* Newsletter Subscription Form */}
             <form onSubmit={handleSubscribe} className="max-w-md mx-auto">
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
