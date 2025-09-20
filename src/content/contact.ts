@@ -48,7 +48,7 @@ export const faqs = [
   },
   {
     question: 'How long does it take to complete a course?',
-    answer: 'Course duration varies from 4 to 8 months depending on the program. We offer flexible learning schedules to accommodate different lifestyles and commitments.'
+    answer: 'Course duration varies from 3 to 6 months depending on the program. We offer flexible learning schedules to accommodate different lifestyles and commitments.'
   },
   {
     question: 'Do you provide job placement assistance?',
@@ -56,7 +56,7 @@ export const faqs = [
   },
   {
     question: 'What is the cost of your courses?',
-    answer: 'Course prices range from 9999 to 29999. We also offer payment plans and scholarships for eligible students. Contact us for detailed pricing information.'
+    answer: 'Course prices range from 9999 to 39999. We also offer payment plans and scholarships for eligible students. Contact us for detailed pricing information.'
   },
   {
     question: 'Do you offer online and in-person classes?',

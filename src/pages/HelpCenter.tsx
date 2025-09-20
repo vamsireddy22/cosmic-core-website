@@ -36,7 +36,7 @@ const HelpCenter: React.FC = () => {
       },
       {
         question: 'How long does it take to complete a course?',
-        answer: 'Course duration varies from 4 to 8 months depending on the program. We offer flexible learning schedules to accommodate different lifestyles and commitments.'
+        answer: 'Course duration varies from 3 to 6 months depending on the program. We offer flexible learning schedules to accommodate different lifestyles and commitments.'
       },
       {
         question: 'Do you provide job placement assistance?',
@@ -44,7 +44,7 @@ const HelpCenter: React.FC = () => {
       },
       {
         question: 'What is the cost of your courses?',
-        answer: 'Course prices range from 9999 to 26999. We also offer payment plans and scholarships for eligible students. Contact us for detailed pricing information.'
+        answer: 'Course prices range from 9999 to 39999. We also offer payment plans and scholarships for eligible students. Contact us for detailed pricing information.'
       },
       {
         question: 'Do you offer online and in-person classes?',
@@ -78,10 +78,6 @@ const HelpCenter: React.FC = () => {
         question: "Which browsers are supported?",
         answer: "We support all modern browsers including Chrome, Firefox, Safari, and Edge. For the best experience, we recommend using the latest version of Chrome or Firefox."
       },
-      {
-        question: "Can I access courses offline?",
-        answer: "Currently, our courses require an internet connection. However, you can download course materials and videos for offline viewing through our mobile app."
-      }
     ],
     account: [
       {

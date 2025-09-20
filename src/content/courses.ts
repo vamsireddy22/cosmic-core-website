@@ -7,7 +7,7 @@ export const courses: Course[] = [
     description: 'Learn to build modern web applications from frontend to backend using the latest technologies.',
     duration: '3 months',
     level: 'Beginner',
-    price: '16999',
+    price: '21999',
     features: [
       'Core Java Programming',
       'Backend Development',
@@ -23,7 +23,7 @@ export const courses: Course[] = [
     description: 'Master data analysis, visualization, and machine learning algorithms for real-world applications.',
     duration: '6 months',
     level: 'Advanced',
-    price: '19999',
+    price: '24999',
     features: [
       'Python Programming',
       'Statistics & Mathematics',
@@ -41,7 +41,7 @@ export const courses: Course[] = [
     description: 'Master advanced AI concepts including neural networks, natural language processing, and computer vision for cutting-edge applications.',
     duration: '6 months',
     level: 'Advanced',
-    price: '19999',
+    price: '29999',
     features: [
       'Introduction to AI & Programming',
       'Machine Learning',
@@ -60,7 +60,7 @@ export const courses: Course[] = [
     description: 'Create cross-platform mobile applications using React Native and modern development practices.',
     duration: '4 months',
     level: 'Intermediate',
-    price: '16999',
+    price: '24999',
     features: [
       'Introduction to UI/UX Design',
       'React Native',
@@ -78,7 +78,7 @@ export const courses: Course[] = [
     description: 'Learn essential cybersecurity concepts, tools, and practices to protect digital assets.',
     duration: '4 months',
     level: 'Intermediate',
-    price: '16999',
+    price: '19999',
     features: [
       'Introduction to Cybersecurity',
       'Network Security',
@@ -96,7 +96,7 @@ export const courses: Course[] = [
     description: 'Become a proficient full stack developer using Python for backend and modern frontend technologies.',
     duration: '3 months',
     level: 'Beginner',
-    price: '9999',
+    price: '14999',
     features: [
       'Python Programming Fundamentals',
       'Python & Django',
@@ -114,7 +114,7 @@ export const courses: Course[] = [
     description: 'Master the fundamentals of data structures and algorithms to excel in technical interviews and real-world problem solving.',
     duration: '3 months',
     level: 'Intermediate',
-    price: '16999',
+    price: '19999',
     features: [
       'Introduction to Data Structures & Algorithms',
       'Core Data Structures & Algorithms',
@@ -132,7 +132,7 @@ export const courses: Course[] = [
     description: 'A VLSI design internship offers hands-on experience in IC design, HDL coding, simulation, and EDA tools, bridging academic theory with real-world chip development.',
     duration: '6 months',
     level: 'Advanced',
-    price: '26999',
+    price: '39999',
     features: [
       'Fundamentals of VLSI Design',
       'IC Design',
@@ -149,7 +149,7 @@ export const courses: Course[] = [
     description: 'Master modern digital marketing strategies including SEO, social media marketing, content creation, analytics, and online advertising to drive business growth and build successful marketing campaigns.',
     duration: '3 months',
     level: 'Beginner',
-    price: '14999',
+    price: '19999',
     features: [
       'Fundamentals of Digital Marketing',
       'SEO & SEM Optimization',
@@ -170,7 +170,7 @@ export const courses: Course[] = [
     description: 'Comprehensive HR training covering recruitment, employee relations, performance management, and organizational development strategies.',
     duration: '3 months',
     level: 'Beginner',
-    price: '17999',
+    price: '19999',
     features: [
       'Fundamentals of Human Resources Management',
       'Recruitment & Selection',
@@ -189,7 +189,7 @@ export const courses: Course[] = [
     description: 'Master financial analysis, risk management, and corporate finance to excel in finance careers.',
     duration: '3 months',
     level: 'Beginner',
-    price: '19999',
+    price: '21999',
     features: [
       'Fundamentals of Finance Management',
       'Financial Analysis',
@@ -206,7 +206,7 @@ export const courses: Course[] = [
     description: 'Master the art of business development, sales strategies, client acquisition, and relationship building to drive business growth and achieve sales targets.',
     duration: '3 months',
     level: 'Beginner',
-    price: '15999',
+    price: '19999',
     features: [
       'Fundamentals of Business Development',
       'Sales Fundamentals & Techniques',
@@ -228,7 +228,7 @@ export const courses: Course[] = [
     description: 'Master Internet of Things development including sensor integration, connectivity protocols, data processing, and IoT platform management to build smart connected devices.',
     duration: '4 months',
     level: 'Intermediate',
-    price: '18999',
+    price: '24999',
     features: [
       'Introduction to IoT',
       'IoT Architecture & Protocols',
@@ -248,7 +248,7 @@ export const courses: Course[] = [
     description: 'Master embedded systems design and programming including microcontroller development, real-time systems, hardware-software integration, and system optimization.',
     duration: '4 months',
     level: 'Intermediate',
-    price: '19999',
+    price: '24999',
     features: [
       'Introduction to Embedded Systems and Applications',
       'Microcontroller Architecture',
@@ -270,7 +270,7 @@ export const courses: Course[] = [
     description: 'Master data analysis techniques including statistical analysis, data visualization, SQL, Excel, and business intelligence tools to extract insights and drive data-driven decisions.',
     duration: '3 months',
     level: 'Beginner',
-    price: '12999',
+    price: '21999',
     features: [
       'Introduction to Data Analysis',
       'Statistical Analysis & Mathematics',
