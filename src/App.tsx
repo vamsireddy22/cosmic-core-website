@@ -13,6 +13,7 @@ import Careers from './pages/Careers';
 import TermsOfService from './pages/TermsOfService';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Reviews from './pages/Reviews';
 
 
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/reviews" element={<Reviews />} />
           </Routes>
         </main>
         <Footer />

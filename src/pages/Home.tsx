@@ -227,85 +227,157 @@ const Home: React.FC = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Naveen Kumar',
-                course: 'Java Full Stack',
-                rating: 5,
-                feedback: 'The Java Full Stack course was amazing! The instructors were knowledgeable and the hands-on projects really helped me understand the concepts. I got a job as a Full Stack Developer within 3 months of completing the course.',
-                image: '👩‍💻'
-              },
-              {
-                name: 'Vamsi Reddy',
-                course: 'Data Science & ML',
-                rating: 5,
-                feedback: 'Excellent course content and practical approach. The machine learning projects were challenging but very rewarding. The career support team helped me land my dream job at a top tech company.',
-                image: '👨‍💻'
-              },
-              {
-                name: 'Raghavendra',
-                course: 'UI/UX Design',
-                rating: 5,
-                feedback: 'The UI/UX course exceeded my expectations. The design tools and methodologies taught here are industry-standard. I now work as a UX Designer at a leading design agency.',
-                image: '👩‍🎨'
-              },
-              {
-                name: 'Navaneswar Reddy',
-                course: 'Python Full Stack',
-                rating: 5,
-                feedback: 'Great learning experience! The Python course covered everything from basics to advanced topics. The instructors were patient and always available to help. Highly recommended!',
-                image: '👨‍🔬'
-              },
-              {
-                name: 'Shahith Babu',
-                course: 'Digital Marketing',
-                rating: 5,
-                feedback: 'The Digital Marketing course was comprehensive and practical. I learned SEO, social media marketing, and analytics.',
-                image: '👩‍💼'
-              },
-              {
-                name: 'Narendra Reddy',
-                course: 'Cybersecurity',
-                rating: 5,
-                feedback: 'Outstanding cybersecurity course! The hands-on labs and real-world scenarios prepared me well for the industry.',
-                image: '👨‍🔒'
-              }
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="bg-cyan-50 rounded-xl shadow-lg p-6 border border-cyan-100 hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                {/* Rating Stars */}
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
+            {(() => {
+              const topReviews = [
+                {
+                  name: 'Naveen Kumar',
+                  course: 'Java Full Stack',
+                  rating: 5,
+                  feedback: 'The Java Full Stack course was amazing! The instructors were knowledgeable and the hands-on projects really helped me understand the concepts. I got a job as a Full Stack Developer within 3 months of completing the course.',
+                  image: '👩‍💻'
+                },
+                {
+                  name: 'Vamsi Reddy',
+                  course: 'Data Science & ML',
+                  rating: 5,
+                  feedback: 'Excellent course content and practical approach. The machine learning projects were challenging but very rewarding. The career support team helped me land my dream job at a top tech company.',
+                  image: '👨‍💻'
+                },
+                {
+                  name: 'Raghavendra',
+                  course: 'UI/UX Design',
+                  rating: 5,
+                  feedback: 'The UI/UX course exceeded my expectations. The design tools and methodologies taught here are industry-standard. I now work as a UX Designer at a leading design agency.',
+                  image: '👩‍🎨'
+                },
+                {
+                  name: 'Navaneswar Reddy',
+                  course: 'Python Full Stack',
+                  rating: 5,
+                  feedback: 'Great learning experience! The Python course covered everything from basics to advanced topics. The instructors were patient and always available to help. Highly recommended!',
+                  image: '👨‍🔬'
+                },
+                {
+                  name: 'Shahith Babu',
+                  course: 'Digital Marketing',
+                  rating: 5,
+                  feedback: 'The Digital Marketing course was comprehensive and practical. I learned SEO, social media marketing, and analytics.',
+                  image: '👩‍💼'
+                }
+              ];
 
-                {/* Feedback Text */}
-                <p className="text-secondary-600 mb-4 leading-relaxed text-sm">
-                  "{testimonial.feedback}"
-                </p>
+              const moreReviews = [
+                {
+                  name: 'Narendra Reddy',
+                  course: 'Cybersecurity',
+                  rating: 5,
+                  feedback: 'Outstanding cybersecurity course! The hands-on labs and real-world scenarios prepared me well for the industry.',
+                  image: '👨‍🔒'
+                },
+                {
+                  name: 'Priya Sharma',
+                  course: 'Data Analyst',
+                  rating: 5,
+                  feedback: 'The Data Analyst course was excellent! I learned SQL, Python, and data visualization tools. Now I work as a Data Analyst at a leading company.',
+                  image: '👩‍💻'
+                },
+                {
+                  name: 'Rajesh Kumar',
+                  course: 'VLSI Design',
+                  rating: 5,
+                  feedback: 'Amazing VLSI course! The practical approach and industry projects helped me understand chip design concepts. Highly recommended for electronics students.',
+                  image: '👨‍🔬'
+                },
+                {
+                  name: 'Anita Patel',
+                  course: 'Business Development',
+                  rating: 5,
+                  feedback: 'Great business development course! I learned sales strategies, client management, and business growth techniques. Now I run my own consulting firm.',
+                  image: '👩‍💼'
+                }
+              ];
 
-                {/* Student Info */}
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-2xl mr-4">
-                    {testimonial.image}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary-900">{testimonial.name}</h4>
-                    <p className="text-sm text-primary-600">{testimonial.course}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+              const reviewsToShow = topReviews;
+              
+              return [
+                ...reviewsToShow.map((testimonial, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-cyan-50 rounded-xl shadow-lg p-6 border border-cyan-100 hover:shadow-xl transition-all duration-300"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
+                  >
+                    {/* Rating Stars */}
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+
+                    {/* Feedback Text */}
+                    <p className="text-secondary-600 mb-4 leading-relaxed text-sm">
+                      "{testimonial.feedback}"
+                    </p>
+
+                    {/* Student Info */}
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-2xl mr-4">
+                        {testimonial.image}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-secondary-900">{testimonial.name}</h4>
+                        <p className="text-sm text-primary-600">{testimonial.course}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )),
+                // Add "More Reviews" card
+                ...[
+                  <motion.div
+                    key="more-reviews"
+                    className="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl shadow-lg p-6 border border-cyan-200 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 5 * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                  >
+                    <Link to="/reviews" className="block">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        ⭐
+                      </div>
+                      <h3 className="text-xl font-bold text-secondary-900 mb-2">
+                        More Reviews
+                      </h3>
+                      <p className="text-secondary-600 mb-4 text-sm">
+                        Click to see more amazing student success stories
+                      </p>
+                      <div className="bg-white rounded-lg p-3 border border-cyan-200">
+                        <p className="text-xs text-secondary-500 mb-1">Additional Reviews:</p>
+                        <div className="flex justify-center space-x-1">
+                          {[...Array(4)].map((_, i) => (
+                            <div key={i} className="flex">
+                              {[...Array(5)].map((_, j) => (
+                                <svg key={j} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    </Link>
+                  </motion.div>
+                ]
+              ];
+            })()}
           </div>
         </div>
       </section>
