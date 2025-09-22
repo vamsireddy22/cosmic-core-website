@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { courses } from '../content/courses';
 import { features } from '../content/features';
 import logoImage from '../assets/cosmicLogo.jpeg';
@@ -11,10 +11,38 @@ const Courses: React.FC = () => {
   const [selectedDuration, setSelectedDuration] = useState<string>('All');
   const [selectedCourse, setSelectedCourse] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const location = useLocation();
 
   const levels = ['All', 'Beginner', 'Intermediate', 'Advanced'];
   const durations = ['All', '3 months', '4 months', '6 months'];
 
+  // Handle hash navigation to specific course
+  useEffect(() => {
+    const hash = location.hash.substring(1); // Remove the # symbol
+    if (hash) {
+      const targetCourse = courses.find(course => course.id === hash);
+      if (targetCourse) {
+        // Clear filters to show the specific course
+        setSearchTerm('');
+        setSelectedLevel('All');
+        setSelectedDuration('All');
+        
+        // Scroll to the course after a short delay to ensure the page is rendered
+        setTimeout(() => {
+          const element = document.getElementById(`course-${hash}`);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Add a highlight effect
+            element.style.transform = 'scale(1.02)';
+            element.style.transition = 'transform 0.3s ease';
+            setTimeout(() => {
+              element.style.transform = 'scale(1)';
+            }, 1000);
+          }
+        }, 500);
+      }
+    }
+  }, [location.hash]);
 
   const openCourseDetails = (course: any) => {
     setSelectedCourse(course);
@@ -178,7 +206,8 @@ const Courses: React.FC = () => {
               {filteredCourses.map((course, index) => (
                 <motion.div
                   key={course.id}
-                  className="mobile-card overflow-hidden bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 hover:shadow-lg transition-all duration-300"
+                  id={`course-${course.id}`}
+                  className="mobile-card overflow-hidden bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 hover:shadow-lg transition-all duration-300 flex flex-col"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -209,9 +238,9 @@ const Courses: React.FC = () => {
                   </div>
 
                   {/* Course Content */}
-                  <div className="p-4 sm:p-6">
+                  <div className="p-4 sm:p-6 flex flex-col h-full">
                     {/* Course Header */}
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-3">
                       <span className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${getLevelColor(course.level)}`}>
                         {getLevelIcon(course.level)} {course.level}
                       </span>
@@ -221,37 +250,35 @@ const Courses: React.FC = () => {
                     </div>
 
                     {/* Course Title */}
-                    <h3 className="mobile-text-xl font-bold text-secondary-900 mb-3">
+                    <h3 className="mobile-text-xl font-bold text-secondary-900 mb-2">
                       {course.title}
                     </h3>
 
                     {/* Course Description */}
-                    <p className="text-secondary-600 mb-4 leading-relaxed">
+                    <p className="text-secondary-600 mb-3 leading-relaxed flex-grow">
                       {course.description}
                     </p>
 
                     {/* Course Duration */}
-                    <div className="flex items-center text-secondary-500 mb-4">
+                    <div className="flex items-center text-secondary-500 mb-3">
                       <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       <span>{course.duration}</span>
                     </div>
 
-                    {/* Course Features - Hidden for all courses */}
-
                     {/* Action Buttons */}
-                    <div className="space-y-3">
+                    <div className="space-y-2 mt-auto">
                       <button
                         onClick={() => openCourseDetails(course)}
-                        className="w-full bg-secondary-100 text-blue-900 hover:bg-secondary-200 transition-colors duration-200 py-2 px-4 rounded-lg font-medium"
+                        className="w-full bg-secondary-100 text-blue-900 hover:bg-secondary-200 transition-colors duration-200 py-2.5 px-4 rounded-lg font-medium"
                       >
                         More Details
                       </button>
                       <Link 
                         to="/contact" 
                         state={{ course: course.title, activeTab: 'contact-info' }}
-                        className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 inline-block text-center"
+                        className="mobile-btn w-full bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200 inline-block text-center py-2.5 px-4 rounded-lg font-medium"
                       >
                         Enroll Now
                       </Link>

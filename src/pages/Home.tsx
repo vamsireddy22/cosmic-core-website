@@ -136,6 +136,180 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Mock Interview Section */}
+      <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
+        <div className="container-custom">
+          <motion.div
+            className="text-center mb-12 sm:mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
+              <span className="text-blue-900">Mock Interview</span> <span className="text-cyan-800">Preparation</span>
+            </h2>
+            <p className="mobile-text-xl text-secondary-600 max-w-3xl mx-auto px-4 sm:px-0">
+              Ace your technical interviews with our comprehensive mock interview sessions. 
+              Practice with industry experts and get personalized feedback to boost your confidence.
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  icon: '🎯',
+                  title: 'Technical Interviews',
+                  description: 'Practice coding challenges, system design, and technical problem-solving with real interview scenarios.'
+                },
+                {
+                  icon: '👨‍💼',
+                  title: 'Expert Interviewers',
+                  description: 'Get interviewed by industry professionals from top tech companies with years of hiring experience.'
+                },
+                {
+                  icon: '📊',
+                  title: 'Detailed Feedback',
+                  description: 'Receive comprehensive feedback on your performance, communication skills, and areas for improvement.'
+                },
+                {
+                  icon: '🏆',
+                  title: 'Interview Confidence',
+                  description: 'Build confidence through repeated practice sessions and personalized coaching tips.'
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  className="flex items-start space-x-4 p-6 bg-cyan-50 rounded-xl shadow-lg border border-cyan-100"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center text-2xl">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-secondary-900 mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-secondary-600 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Student Feedback Section */}
+      <section className="section-padding bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container-custom">
+          <motion.div
+            className="text-center mb-12 sm:mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
+              What Our <span className="text-blue-900">Students</span> <span className="text-cyan-800">Say</span>
+            </h2>
+            <p className="mobile-text-xl text-secondary-600 max-w-2xl mx-auto px-4 sm:px-0">
+              Hear from our successful graduates who have transformed their careers with our courses
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Naveen Kumar',
+                course: 'Java Full Stack',
+                rating: 5,
+                feedback: 'The Java Full Stack course was amazing! The instructors were knowledgeable and the hands-on projects really helped me understand the concepts. I got a job as a Full Stack Developer within 3 months of completing the course.',
+                image: '👩‍💻'
+              },
+              {
+                name: 'Vamsi Reddy',
+                course: 'Data Science & ML',
+                rating: 5,
+                feedback: 'Excellent course content and practical approach. The machine learning projects were challenging but very rewarding. The career support team helped me land my dream job at a top tech company.',
+                image: '👨‍💻'
+              },
+              {
+                name: 'Raghavendra',
+                course: 'UI/UX Design',
+                rating: 5,
+                feedback: 'The UI/UX course exceeded my expectations. The design tools and methodologies taught here are industry-standard. I now work as a UX Designer at a leading design agency.',
+                image: '👩‍🎨'
+              },
+              {
+                name: 'Navaneswar Reddy',
+                course: 'Python Full Stack',
+                rating: 5,
+                feedback: 'Great learning experience! The Python course covered everything from basics to advanced topics. The instructors were patient and always available to help. Highly recommended!',
+                image: '👨‍🔬'
+              },
+              {
+                name: 'Shahith Babu',
+                course: 'Digital Marketing',
+                rating: 5,
+                feedback: 'The Digital Marketing course was comprehensive and practical. I learned SEO, social media marketing, and analytics.',
+                image: '👩‍💼'
+              },
+              {
+                name: 'Narendra Reddy',
+                course: 'Cybersecurity',
+                rating: 5,
+                feedback: 'Outstanding cybersecurity course! The hands-on labs and real-world scenarios prepared me well for the industry.',
+                image: '👨‍🔒'
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="bg-cyan-50 rounded-xl shadow-lg p-6 border border-cyan-100 hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                {/* Rating Stars */}
+                <div className="flex items-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Feedback Text */}
+                <p className="text-secondary-600 mb-4 leading-relaxed text-sm">
+                  "{testimonial.feedback}"
+                </p>
+
+                {/* Student Info */}
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-2xl mr-4">
+                    {testimonial.image}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-secondary-900">{testimonial.name}</h4>
+                    <p className="text-sm text-primary-600">{testimonial.course}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="section-padding bg-primary-600">
         <div className="container-custom">
