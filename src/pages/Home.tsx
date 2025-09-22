@@ -266,36 +266,6 @@ const Home: React.FC = () => {
                 }
               ];
 
-              const moreReviews = [
-                {
-                  name: 'Narendra Reddy',
-                  course: 'Cybersecurity',
-                  rating: 5,
-                  feedback: 'Outstanding cybersecurity course! The hands-on labs and real-world scenarios prepared me well for the industry.',
-                  image: '👨‍🔒'
-                },
-                {
-                  name: 'Priya Sharma',
-                  course: 'Data Analyst',
-                  rating: 5,
-                  feedback: 'The Data Analyst course was excellent! I learned SQL, Python, and data visualization tools. Now I work as a Data Analyst at a leading company.',
-                  image: '👩‍💻'
-                },
-                {
-                  name: 'Rajesh Kumar',
-                  course: 'VLSI Design',
-                  rating: 5,
-                  feedback: 'Amazing VLSI course! The practical approach and industry projects helped me understand chip design concepts. Highly recommended for electronics students.',
-                  image: '👨‍🔬'
-                },
-                {
-                  name: 'Anita Patel',
-                  course: 'Business Development',
-                  rating: 5,
-                  feedback: 'Great business development course! I learned sales strategies, client management, and business growth techniques. Now I run my own consulting firm.',
-                  image: '👩‍💼'
-                }
-              ];
 
               const reviewsToShow = topReviews;
               
