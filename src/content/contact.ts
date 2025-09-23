@@ -16,6 +16,14 @@ export const contactInfo: ContactInfo = {
 
 export const contactMethods = [
   {
+    title: 'WhatsApp Message',
+    description: 'Chat with us instantly for quick answers and support',
+    value: contactInfo.phone,
+    icon: '💬',
+    action: contactInfo.socialMedia.whatsapp,
+    color: 'from-green-400 to-green-600'
+  },
+  {
     title: 'Email Us',
     description: 'Send us an email anytime',
     value: contactInfo.email,
@@ -29,7 +37,7 @@ export const contactMethods = [
     value: contactInfo.phone,
     icon: '📞',
     action: `tel:${contactInfo.phone}`,
-    color: 'from-green-400 to-green-600'
+    color: 'from-purple-400 to-purple-600'
   },
   {
     title: 'Visit Us',
@@ -37,7 +45,7 @@ export const contactMethods = [
     value: contactInfo.address,
     icon: '📍',
     action: `https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`,
-    color: 'from-purple-400 to-purple-600'
+    color: 'from-orange-400 to-orange-600'
   }
 ];
 
