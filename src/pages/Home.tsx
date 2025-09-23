@@ -136,6 +136,212 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Career Path Routes Section */}
+      <section className="section-padding bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-20 left-20 w-32 h-32 sm:w-48 sm:h-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-40"
+            animate={{
+              scale: [1, 1.3, 1],
+              rotate: [0, 90, 180],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 right-20 w-32 h-32 sm:w-48 sm:h-48 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-40"
+            animate={{
+              scale: [1.3, 1, 1.3],
+              rotate: [180, 90, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
+          <motion.div
+            className="text-center mb-12 sm:mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="mobile-text-3xl font-bold text-secondary-900 mb-4">
+              Choose Your <span className="text-blue-900">Career</span> <span className="text-cyan-800">Path</span>
+            </h2>
+            <p className="mobile-text-xl text-secondary-600 max-w-3xl mx-auto px-4 sm:px-0">
+              Discover diverse career routes in technology and find the perfect path that matches your interests and goals
+            </p>
+          </motion.div>
+
+          <div className="max-w-6xl mx-auto">
+            {/* Career Path Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+              {[
+                {
+                  id: 'web-development',
+                  title: 'Full Stack Developer',
+                  icon: '💻',
+                  description: 'Master both frontend and backend technologies to build complete web applications',
+                  skills: ['React', 'Node.js', 'MongoDB', 'Express'],
+                  duration: '3 months',
+                  difficulty: 'Beginner',
+                  color: 'from-blue-500 to-cyan-500',
+                  bgColor: 'bg-blue-50',
+                  borderColor: 'border-blue-200'
+                },
+                {
+                  id: 'data-analyst',
+                  title: 'Data Analyst',
+                  icon: '📊',
+                  description: 'Analyze complex data and build machine learning models to drive business insights',
+                  skills: ['Python', 'Machine Learning', 'SQL', 'Statistics'],
+                  duration: '3 months',
+                  difficulty: 'Intermediate',
+                  color: 'from-purple-500 to-pink-500',
+                  bgColor: 'bg-purple-50',
+                  borderColor: 'border-purple-200'
+                },
+                {
+                  id: 'artificial-intelligence',
+                  title: 'Artificial Intelligence',
+                  icon: '🤖',
+                  description: 'Master advanced AI concepts including neural networks, natural language processing, and computer vision for cutting-edge applications',
+                  skills: ['Machine Learning', 'Neural Networks', 'Natural Language Processing', 'Computer Vision'],
+                  duration: '6 months',
+                  difficulty: 'Advanced',
+                  color: 'from-indigo-500 to-blue-500',
+                  bgColor: 'bg-indigo-50',
+                  borderColor: 'border-indigo-200'
+                },
+                {
+                  id: 'mobile-development',
+                  title: 'UI/UX Designer',
+                  icon: '🎨',
+                  description: 'Create beautiful and intuitive user experiences through design thinking and prototyping',
+                  skills: ['Figma', 'Adobe XD', 'User Research', 'Prototyping'],
+                  duration: '4 months',
+                  difficulty: 'Intermediate',
+                  color: 'from-emerald-500 to-teal-500',
+                  bgColor: 'bg-emerald-50',
+                  borderColor: 'border-emerald-200'
+                },
+                {
+                  id: 'vlsi-design',
+                  title: 'VLSI Design',
+                  icon: '🔬',
+                  description: 'A VLSI design internship offers hands-on experience in IC design, HDL coding, simulation, and EDA tools, bridging academic theory with real-world chip development',
+                  skills: ['IC Design', 'HDL Coding', 'Simulation', 'EDA Tools'],
+                  duration: '6 months',
+                  difficulty: 'Advanced',
+                  color: 'from-orange-500 to-red-500',
+                  bgColor: 'bg-orange-50',
+                  borderColor: 'border-orange-200'
+                },
+                {
+                  id: 'cybersecurity',
+                  title: 'Cybersecurity',
+                  icon: '🔒',
+                  description: 'Learn essential cybersecurity concepts, tools, and practices to protect digital assets',
+                  skills: ['Network Security', 'Ethical Hacking', 'Cryptography', 'Security Tools'],
+                  duration: '4 months',
+                  difficulty: 'Intermediate',
+                  color: 'from-lime-500 to-green-600',
+                  bgColor: 'bg-green-50',
+                  borderColor: 'border-lime-400'
+                }
+              ].map((career, index) => (
+                <motion.div
+                  key={career.title}
+                  className={`${career.bgColor} rounded-xl shadow-lg p-6 border ${career.borderColor} hover:shadow-xl transition-all duration-300 cursor-pointer w-full max-w-sm mx-auto flex flex-col h-full`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                >
+                  {/* Career Icon */}
+                  <div className={`w-16 h-16 bg-gradient-to-br ${career.color} rounded-xl flex items-center justify-center text-3xl mb-4 mx-auto`}>
+                    {career.icon}
+                  </div>
+
+                  {/* Career Title */}
+                  <h3 className="text-xl font-bold text-secondary-900 mb-3 text-center">
+                    {career.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-secondary-600 text-center mb-4 leading-relaxed flex-grow">
+                    {career.description}
+                  </p>
+
+                  {/* Meta Info */}
+                  <div className="flex justify-between items-center text-sm text-secondary-500 mb-4">
+                    <span className="flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {career.duration}
+                    </span>
+                    <span className="flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {career.difficulty}
+                    </span>
+                  </div>
+
+                  {/* Action Button */}
+                  <Link 
+                    to={`/courses#${career.id}`} 
+                    className={`block w-full text-center py-2 px-4 bg-gradient-to-r ${career.color} text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 mt-auto`}
+                  >
+                    Start Learning
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <motion.div
+              className="text-center mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-2xl p-8 border border-blue-200">
+                <h3 className="text-3xl font-bold text-secondary-900 mb-4">
+                  Not Sure Which Path to Choose?
+                </h3>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link 
+                    to="/courses" 
+                    className="mobile-btn btn-primary w-full sm:w-auto text-center"
+                  >
+                    Visit All Our Courses
+                  </Link>
+                  <Link 
+                    to="/contact" 
+                    className="mobile-btn btn-secondary w-full sm:w-auto text-center"
+                  >
+                    Get Career Guidance
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Mock Interview Section */}
       <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
         <div className="container-custom">

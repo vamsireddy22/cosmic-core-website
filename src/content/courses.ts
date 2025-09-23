@@ -269,7 +269,7 @@ export const courses: Course[] = [
     title: 'Data Analyst',
     description: 'Master data analysis techniques including statistical analysis, data visualization, SQL, Excel, and business intelligence tools to extract insights and drive data-driven decisions.',
     duration: '3 months',
-    level: 'Beginner',
+    level: 'Intermediate',
     price: '21999',
     features: [
       'Introduction to Data Analysis',
